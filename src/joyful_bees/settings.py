@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #custom apps for subfolder apps
+    'apps.customers',
+    'apps.pages',
+    'apps.products',
+    'apps.profiles',
+    'apps.reports',
+    'apps.sales',
+    
 ]
 
 MIDDLEWARE = [
@@ -103,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-pl' #language set to Polish language
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw' #timezone set to local TZ
 
 USE_I18N = True
 
