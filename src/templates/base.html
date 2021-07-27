@@ -24,14 +24,14 @@
     {% block scripts %}
     {% endblock scripts %}
 
-    <title> Joyful Bees | {% block title %}{% endblock title %}</title>
+    <title>Joyful Bees| {% block title %}{% endblock title %}</title>
   </head>
   <body>
-    {% comment %} {% include 'navbar.html' %}
+    {% comment %} {% include 'navbar.html' %} {% endcomment %}
     <div class="container mt-3 mb-3">
         {% block content %}
         {% endblock content %}
-    </div> {% endcomment %}
+    </div>
 
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
