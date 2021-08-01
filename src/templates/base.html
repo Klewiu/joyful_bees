@@ -41,6 +41,13 @@
         <br>
     {% comment %} {% include 'navbar.html' %} {% endcomment %}
     <div class="container mt-3 mb-3">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}
         {% endblock content %}
     </div>
