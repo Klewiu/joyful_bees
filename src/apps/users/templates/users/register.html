@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content%}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="boarder-bottom mb-4">Rejestracja</legend>
+                {{form.as_p}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Zarejestruj Się</button>
+            </div>
+
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Masz już konto? <a href="#">Zaloguj się</a>
+            </small>
+        </div>
+    </div>
+    <br>
+<p class="maintenance">The site is under construction</p>
+{% endblock content %}
