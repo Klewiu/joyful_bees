@@ -1,23 +1,25 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content%}
-    <div>
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="boarder-bottom mb-4">Rejestracja</legend>
-                {{form.as_p}}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Zarejestruj Się</button>
-            </div>
-
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Masz już konto? <a href="#">Zaloguj się</a>
-            </small>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="boarder-bottom mb-4">Registration for Moderators</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Register Now</button>
         </div>
-    </div>
+
+    </form>
     <br>
+    <div class="border-top pt-3">
+        <small class="text-muted">   
+            Already have an account? <a href="#">Sign In</a>
+        </small>
+    </div>
+</div>
+<br>
 <p class="maintenance">The site is under construction</p>
 {% endblock content %}
