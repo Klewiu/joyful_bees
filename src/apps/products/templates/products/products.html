@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1> This is {{title}} page </h1>
+<p class="maintenance">The site is under construction</p>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+            <div class="col col-md-6">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{product.name}}">
+                {% endif %}
+                            
+                <p clas="mr-2">{{ product.name }}</p>
+                <small class="text-muted">{{ product.created |date:"F d, Y" }}</small>
+                <h2><a class="article-title"> {{ product.price }}</a></h2>
+                <p class="article-content">{{ product.description }}</p>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+    
+</div>
+   
+{% endblock content %}
