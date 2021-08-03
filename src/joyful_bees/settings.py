@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'apps.reports',
     'apps.sales',
     'apps.users',
+    #3rd party apps
+    'crispy_forms',
     
 ]
 
@@ -113,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl' #language set to Polish language
+LANGUAGE_CODE = 'en-en'
 
 TIME_ZONE = 'Europe/Warsaw' #timezone set to local TZ
 
@@ -140,3 +142,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMMPLATE_PACK = 'bootstrap4'
