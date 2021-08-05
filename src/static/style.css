@@ -1,3 +1,22 @@
+.jumbo-text{
+  font:x-large;
+  color:beige;
+  size: 20px;
+  text-align:center;
+  text-shadow: black 1px 1px 1px;
+}
+
+.navbar-brand{
+     margin-left:15px !important;
+}
+
+.jumbotron {
+    background-image: url("../media/Baner_mid_res2.jpg");
+    background-size: cover;
+    padding-top: 5%;
+    padding-bottom: 12%;
+  }
+
 .maintenance{
     color: rgb(255, 0, 0);
     text-align: left;
@@ -13,10 +32,11 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color:beige;
+    color: rgb(68, 68, 68);
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    border-radius: .5rem;
 
 }
 
