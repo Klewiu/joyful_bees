@@ -13,10 +13,10 @@
                     <img class="card-img-top" src="{{ product.image.url }}" class="img-fluid" alt="{{product.name}}" data-holder-rendered="true">
                     {% endif %}
                     <div class="card-body">
-                        <h5>{{ product.name }}</h5>
-                        <p class="card-text">{{product.description}}</p>
+                        <p class="card-text"><b>{{ product.name }}</b>
+                            <p> {{product.description}}</p></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <medium class="text-muted">CENA: {{product.price|floatformat:2}} PLN</medium>
+                                <medium>CENA: {{product.price|floatformat:2}} PLN</medium>
                             </div>
                     </div>
                 </div>
@@ -25,7 +25,4 @@
     </div>
     <br>
 </div>
-
-
-   
 {% endblock content %}
