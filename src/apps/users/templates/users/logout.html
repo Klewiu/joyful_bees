@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content%}
-<h1> This is {{logout}} page </h1>
+<h2>You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">   
+            <a href="{% url 'login' %}">Log In Again?</a>
+        </small>
+    </div>
+
+<br>
 <p class="maintenance">The site is under construction</p>
 {% endblock content %}
