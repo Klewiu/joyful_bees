@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content%}
-<h1> This is {{title}} page </h1>
-<p class="maintenance">The site is under construction</p>
+<h1> {{title}} </h1>
+{% for description in site_description %}
+        <p class="page_description">{{description.about_description_1}}</p>
+        <p><b>{{description.about_description_2}}</b></p>
+{% endfor %}
 {% endblock content %}

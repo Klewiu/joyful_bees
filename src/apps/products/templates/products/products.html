@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content%}
-<h1> This is {{title}} page </h1>
-<p class="maintenance">The site is under construction</p>
+<h1> Nasze {{title}} </h1>
+{% for description in site_description %}
+    <p class="page_description">{{description.product_description_1}}</p>
+    <p><b> {{description.product_description_2}}</b></p>
+{% endfor %}
 <br>
 <div class="container">
     <div class="row">
@@ -14,9 +17,19 @@
                     {% endif %}
                     <div class="card-body">
                         <p class="card-text"><b>{{ product.name }}</b>
-                            <p> {{product.description}}</p></p>
+                            <p style="text-align: justify"> {{product.description}}</p></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <medium>CENA: {{product.price|floatformat:2}} PLN</medium>
+                                <medium ><b> CENA: {{product.price|floatformat:2}} PLN</b></medium>
+                                
+                            </div>
+                            <div>
+                                {% if product.availability > 5 %}
+                                <p style="color:green">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                                {% elif product.availability > 0 and product.availability < 6 %}
+                                <p style="color:darkorange">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                                {% else %}
+                                <p style="color:darkred">PRODUKT OBECNIE NIEDOSTĘPNY </p>
+                                {% endif %}
                             </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content%}
+<<<<<<< HEAD
 <h1> {{title}} Us </h1>
 <!-- Initial text-->
 <div class="alert-light">
@@ -70,4 +71,11 @@
 <br>
 
 <p class="maintenance">The site is under construction</p>
+=======
+<h1> {{title}}</h1>
+{% for description in site_description %}
+    <p class="page_description">{{description.contact_description_1}}</p>
+    <p><b>{{description.contact_description_2}}</b></p>
+{% endfor %}
+>>>>>>> 5e82abbce38be29686c1d9f007be7999673ad524
 {% endblock content %}

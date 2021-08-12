@@ -27,12 +27,12 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul  class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-about' %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-news' %}">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-products' %}">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-contact' %}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'page-about' %}">O nas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'page-news' %}">Aktualności</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'page-products' %}">Produkty</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'page-contact' %}">Kontakt</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profil użytkownika</a></li>
                         <!-- Button trigger LOGOUT modal -->
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Logout
