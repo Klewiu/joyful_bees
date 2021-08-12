@@ -28,7 +28,6 @@ def news(request):
     return render (request,'pages/news.html', context)
 
 def contact(request):
-<<<<<<< HEAD
     if request.method =='POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
@@ -37,19 +36,18 @@ def contact(request):
             'message_name': message_name,
             'message_email': message_email,
             'message': message,
+            'title':'Kontakt',
+            'site_description': Site_description.objects.all()
         }
         return render (request,'pages/contact.html', context)
 
     else:
-        return render (request,'pages/contact.html', {'title':'Contact'} )
-=======
-    context = {
+        context = {
         'title':'Kontakt',
         'site_description': Site_description.objects.all(),
       }
-    return render (request,'pages/contact.html', context )
+        return render (request,'pages/contact.html', context )
 
     
   
->>>>>>> 5e82abbce38be29686c1d9f007be7999673ad524
 

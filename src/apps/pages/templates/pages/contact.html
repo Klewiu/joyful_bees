@@ -1,81 +1,66 @@
 {% extends "base.html" %}
 
 {% block content%}
-<<<<<<< HEAD
-<h1> {{title}} Us </h1>
-<!-- Initial text-->
-<div class="alert-light">
-    <h5 class="alert-heading mb-0">Welcome to our Contact Page</h5>
-    <p>Please make sure to contact us, if you have any questions or product requests. <br>
-        Please find our contact form and contact information below.</p>
-    <hr>
-</div>
-<br>
+<h1> {{title}}</h1>
+{% for description in site_description %}
+<p class="page_description alert-light">{{description.contact_description_1}}</p>
+<p class="alert-light"><b>{{description.contact_description_2}}</b></p>
+{% endfor %}
+
 
 <!-- Contact details -->
-<div>
-    <h4>Pasieka Radość</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="max-width: 25rem; max-height: 25;">
+                <div class="card-body">
+                    <div class="card-text">
+                        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+                        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+            
+                    <h5>Numer Telefonu / WhatsApp:</h5>
+                    <p><a href="tel:+48505538274"><i class="fas fa-phone"></i>+48505538274</a><br></p>
+                    <h5>Email:</h5>
+                    <p><a href="mailto:pasiekaradość@pasiekaradość.com"><i class="fas fa-envelope"></i>pasiekaradość@pasiekaradość.com</a></p>
+                    <h5>Adres:</h5>
+                    <p>Ezopa 57, 04-805, Warszawa</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <br>
 
-        <h6>Phone:</h6>
-        <p>+48 000000000</p>
+<!-- Contact Form -->
+        <div class="col-sm-4">
+            <div class="card" style="max-width: 25rem; max-height: 25;">
+                <div class="card-body">
+                    <div class="card-text">
 
-        <h6>Email:</h6>
-        <p>info@pasiekaradosc.company.com</p>
+                    <h5>Wyślij Email</h5>
+                    <form action="{% url 'page-contact' %}" method='post'>
+                        {% csrf_token %}
+                        <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
+                        <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
+                        <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn-primary mt-1">Send Message</button>
+                    </form>
 
-        <h6>Address:</h6>
-        <p>Ezopa 57, Warszawa, 04-805</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <br>
 
 <!-- Map -->
-
-<section class="mt-50 mb-100 col-lg-8">
-    <div class="mapouter">
-        <div class="gmap_canvas">
-            <iframe width="600" height="500" id="gmap_canvas"
-                src="https://maps.google.com/maps?q=ezopa%2057&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                scrolling="no" marginheight="0" marginwidth="0">
-            </iframe>
-            <a href="https://www.online-timer.net"></a>
-            <br>
-        </div>
-    </div>
-</section>
-<br>
-
-<!-- Form -->
-<h5 class=alert-light>Send Us an Email</h5>
-<form action="{% url 'page-contact' %}" method='post'>
-    {% csrf_token %}
     <div class="row">
-        <div class="col-lg-5 mb-1">
-            <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
-        </div>
-        <div class="col-lg-5 mb-1">
-            <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
-        </div>
-        <div class="col-10">
-            <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
-        </div>
-        <div class="col-12 mt-1">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-
-        </div>
-        <div class="alert-light">
-            <hr>
-            Thank you for contacting us {{message_name}}!
+        <div class="map-responsive"></div>         
+            <iframe src="https://maps.google.com/maps?q=ezopa%2057&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="450" frameboarder="0" style="boarder:0" allowfullscreen>
+            </iframe>
         </div>
     </div>
-</form>
-<br>
-<br>
+    <a href="https://www.online-timer.net"></a>
+    <br>
 
-<p class="maintenance">The site is under construction</p>
-=======
-<h1> {{title}}</h1>
-{% for description in site_description %}
-    <p class="page_description">{{description.contact_description_1}}</p>
-    <p><b>{{description.contact_description_2}}</b></p>
-{% endfor %}
->>>>>>> 5e82abbce38be29686c1d9f007be7999673ad524
 {% endblock content %}
