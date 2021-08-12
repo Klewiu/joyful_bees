@@ -14,7 +14,7 @@
      margin-left:15px !important; 
 }
 .nav-item{
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 30px;
 }
 
@@ -25,10 +25,13 @@
     padding-bottom: 12%;
   }
 
-.maintenance{
-    color: rgb(255, 0, 0);
+.page_description{
+    color:dimgrey;
     text-align: left;
-    line-height: 0.8;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 5%;
   }
 
 .card {

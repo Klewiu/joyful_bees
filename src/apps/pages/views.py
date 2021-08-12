@@ -1,18 +1,38 @@
 from django.shortcuts import render
-
+from apps.pages.models import Site_description
 # from django.http import HttpResponse
 
 # Create your views here.
 
 def home(request):
-    return render(request,'pages/home.html', {'title':'Home'} )
+    context = {
+        'title':'Strona główna',
+        'site_description': Site_description.objects.all(),
+      }
+
+    return render (request,'pages/home.html', context)
 
 def about(request):
-    return render (request,'pages/about.html', {'title':'About'} )
+    context = {
+        'title':'O nas',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/about.html', context )
 
 def news(request):
-    return render (request,'pages/news.html', {'title':'News'} )
+    context = {
+        'title':'Aktualności',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/news.html', context)
 
 def contact(request):
-    return render (request,'pages/contact.html', {'title':'Contact'} )
+    context = {
+        'title':'Kontakt',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/contact.html', context )
+
+    
+  
 
