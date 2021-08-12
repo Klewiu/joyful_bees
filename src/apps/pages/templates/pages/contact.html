@@ -1,5 +1,73 @@
 {% extends "base.html" %}
+
 {% block content%}
-<h1> This is {{title}} page </h1>
+<h1> {{title}} Us </h1>
+<!-- Initial text-->
+<div class="alert-light">
+    <h5 class="alert-heading mb-0">Welcome to our Contact Page</h5>
+    <p>Please make sure to contact us, if you have any questions or product requests. <br>
+        Please find our contact form and contact information below.</p>
+    <hr>
+</div>
+<br>
+
+<!-- Contact details -->
+<div>
+    <h4>Pasieka Radość</h5>
+
+        <h6>Phone:</h6>
+        <p>+48 000000000</p>
+
+        <h6>Email:</h6>
+        <p>info@pasiekaradosc.company.com</p>
+
+        <h6>Address:</h6>
+        <p>Ezopa 57, Warszawa, 04-805</p>
+</div>
+<br>
+
+<!-- Map -->
+
+<section class="mt-50 mb-100 col-lg-8">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600" height="500" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=ezopa%2057&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+            <a href="https://www.online-timer.net"></a>
+            <br>
+        </div>
+    </div>
+</section>
+<br>
+
+<!-- Form -->
+<h5 class=alert-light>Send Us an Email</h5>
+<form action="{% url 'page-contact' %}" method='post'>
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-lg-5 mb-1">
+            <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
+        </div>
+        <div class="col-lg-5 mb-1">
+            <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
+        </div>
+        <div class="col-10">
+            <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
+        </div>
+        <div class="col-12 mt-1">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+        </div>
+        <div class="alert-light">
+            <hr>
+            Thank you for contacting us {{message_name}}!
+        </div>
+    </div>
+</form>
+<br>
+<br>
+
 <p class="maintenance">The site is under construction</p>
 {% endblock content %}
