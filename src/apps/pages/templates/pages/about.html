@@ -2,7 +2,7 @@
 {% block content%}
 <h1> {{title}} </h1>
 {% for description in site_description %}
-        <p class="page_description">{{description.about_description_1}}</p>
-        <p><b>{{description.about_description_2}}</b></p>
+        <p class="page_description alert-light">{{description.about_description_1}}</p>
+        <p class="alert-light"><b>{{description.about_description_2}}</b></p>
 {% endfor %}
 {% endblock content %}
