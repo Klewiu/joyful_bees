@@ -51,6 +51,17 @@
 
 }
 
+.card2 {
+  display: flex;
+  min-width: 0;
+  color: rgb(68, 68, 68);
+  background-clip:content-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .5rem;
+
+}
+
+
 .card-img-top {
   border-top-left-radius: calc(.25rem - 1px);
   border-top-right-radius: calc(.25rem - 1px);
@@ -77,10 +88,8 @@
   }
 }
 
-
 .map-responsive{
     overflow:hidden;
-    padding-bottom:0%;
     position:relative;
     height:0;
 }
@@ -92,7 +101,6 @@
     width:100%;
     position:absolute;
 }
-
 
 
 

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
+from apps.products.models import Product
 
 # Create your views here.
 
@@ -20,5 +21,8 @@ def register (request):
 
 @login_required
 def profile (request):
-    return render(request, 'users/profile.html')
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'users/profile.html', context)
 
