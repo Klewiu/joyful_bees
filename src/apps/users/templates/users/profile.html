@@ -8,6 +8,32 @@
     <div class="media-body">
       <h2>{{ user.username }}</h2>
       <p class="text-warning">{{ user.email }}</p>
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+          <div class="row">
+          <h5>Twoja lista produktów:</h5>
+            <div class="col-md">
+              <div class="card2 card-body">
+                <table class="table">
+                  <tr>
+                      <th>Nazwa produktu</th>
+                      <th>Cena</th>
+                      <th>Dostępność</th>
+                  </tr>
+
+                  {% for product in products %}
+                    <tr>
+                        <td>{{product.name}}<td>
+                        <td>{{product.price}}<td>
+                        <td>{{product.availability}}<td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+        {% endif %}
     </div>
   </div>
 </div>
