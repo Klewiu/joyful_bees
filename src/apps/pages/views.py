@@ -1,6 +1,8 @@
-from django.db.models.fields import EmailField
 from django.shortcuts import render
 from apps.pages.models import Site_description
+from django.core.mail import send_mail
+from django.contrib import messages
+
 # from django.http import HttpResponse
 
 # Create your views here.
@@ -32,6 +34,19 @@ def contact(request):
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
+
+        #sending emial through contact form
+        if message_name and message_email and message:
+          send_mail(
+            f'Formularz Kontaktowy, wiadomość od {message_name}',
+            f'Wiadomość ze strony Pasieka Radość od {message_email}: {message}',
+            message_email,
+            ['tomekklewicki@wp.pl'],)
+          messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany')
+        else:
+          messages.warning(request, 'Wypełnij wszystkie pola formularza przed wysłaniem')
+
+
         context = {
             'message_name': message_name,
             'message_email': message_email,
@@ -46,7 +61,10 @@ def contact(request):
         'title':'Kontakt',
         'site_description': Site_description.objects.all(),
       }
-        return render (request,'pages/contact.html', context )
+        return render (request,'pages/contact.html', context)
+
+
+
 
     
   
