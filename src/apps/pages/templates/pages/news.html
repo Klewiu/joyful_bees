@@ -1,8 +1,27 @@
 {% extends "base.html" %}
 {% block content%}
+
 <h1>{{title}}</h1>
 {% for description in site_description %}
     <p class="page_description alert-light">{{description.news_description_1}}</p>
     <p class="alert-light"><b>{{description.news_description_2}}</b></p>
 {% endfor %}
+
+
+{% for post in posts %}
+<article class="media content-section">
+  <img class="rounded-circle post-image" src="{{post.author.profile.image.url }}">
+  <div class="media-body">
+    <div class="article-metadata">
+        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> : {{ post.author }}</h2> 
+     
+      {{ post.content }}</br>
+      <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+    </div>
+  </div>
+</article>
+{% endfor %}
+
 {% endblock content %}
+
+

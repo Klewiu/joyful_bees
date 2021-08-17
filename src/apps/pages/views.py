@@ -2,10 +2,14 @@ from django.shortcuts import render
 from apps.pages.models import Site_description
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.views.generic import ListView, DetailView
+from .models import Post
 
 # from django.http import HttpResponse
 
 # Create your views here.
+
+# function based views
 
 def home(request):
     context = {
@@ -22,12 +26,7 @@ def about(request):
       }
     return render (request,'pages/about.html', context )
 
-def news(request):
-    context = {
-        'title':'Aktualności',
-        'site_description': Site_description.objects.all(),
-      }
-    return render (request,'pages/news.html', context)
+
 
 def contact(request):
     if request.method =='POST':
@@ -64,6 +63,24 @@ def contact(request):
         return render (request,'pages/contact.html', context)
 
 
+# class based views
+
+class NewsView (ListView):
+
+  def get (self, request, *args, **kwargs):
+  
+    context = {
+        'title':'Aktualności',
+        'site_description': Site_description.objects.all(),
+        'posts': Post.objects.all().order_by('-date_posted'),
+      }
+    return render (request,'pages/news.html', context)
+
+class NewsDetailView(DetailView):
+  model=Post
+  template_name = 'pages/news_detail.html'
+  
+  
 
 
     
