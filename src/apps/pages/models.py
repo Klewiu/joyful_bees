@@ -1,5 +1,6 @@
-from typing import Optional
 from django.db import models
+
+
 
 class Site_description (models.Model):
     about_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
