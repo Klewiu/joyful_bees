@@ -16,6 +16,24 @@
 .nav-item{
   font-size: 18px;
   margin-right: 30px;
+  border-radius: 1rem;
+}
+
+.navbar-active{
+  background-color: white;
+}
+
+.nav-item:focus, .nav-item:hover, .nav-item:active {
+	background-color: white; 
+  border-radius: 1rem;
+} 
+
+.navbar-toggler{
+  background-color: white;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .jumbotron {
@@ -92,6 +110,7 @@
     overflow:hidden;
     position:relative;
     height:0;
+    position:relative;
 }
 
 .map-responsive iframe{
@@ -99,12 +118,8 @@
     top:0;
     height:100%;
     width:100%;
-    position:absolute;
+    position:relative;
 }
-
-
-
-
 
 
 

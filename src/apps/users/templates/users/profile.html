@@ -8,35 +8,32 @@
     <div class="media-body">
       <h2>{{ user.username }}</h2>
       <p class="text-warning">{{ user.email }}</p>
-        {% if request.user.is_authenticated and request.user.is_superuser %}
-          <div class="row">
-          <h5>Twoja lista produktów:</h5>
-            <div class="col-md">
-              <div class="card2 card-body">
-                <table class="table">
-                  <tr>
-                    <th>Nazwa produktu</th>
-                      <th>Cena</th>
-                      <th>Dostępność</th>
-                  </tr>
 
-                  {% for product in products %}
-                    <tr>
-                        <td>{{product.name}}<td>
-                        <td>{{product.price}}<td>
-                        <td>{{product.availability}}<td>
-                    </tr>
-                  {% endfor %}
-                </table>
-              </div>
-            </div>
-          </div>
+      {% if request.user.is_authenticated and request.user.is_superuser %}
+      <div class="row">
+        <h5>Twoja lista produktów:</h5>
 
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nazwa produktu </th>
+              <th scope="col">Cena</th>
+              <th scope="col">Dostępność</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>{{product.name}}</td>
+              <td class="text-center">{{product.price|floatformat:0}} zł</td>
+              <td class="text-center">{{product.availability}} szt</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
 
-        {% endif %}
-    </div>
-  </div>
-</div>
-<br>
-<p class="maintenance">The site is under construction</p>
-{% endblock content %}
+      <br>
+      <p class="maintenance">The site is under construction</p>
+      {% endblock content %}

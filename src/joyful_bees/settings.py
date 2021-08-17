@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.users',
     #3rd party apps
     'crispy_forms',
+    'active_link',
     
 ]
 

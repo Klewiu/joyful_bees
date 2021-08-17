@@ -1,3 +1,4 @@
+{% load active_link_tags %}
 <!-- LOGOUT MODAL -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -17,22 +18,22 @@
     </div>
   </div> 
 
-<!-- NAVBAR -->
+<!-- NAVBAR with active_link-->
 
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav" >
-  <a class="navbar-brand" href="{% url 'page-home' %}">
-    <img src="../media/logo.png" height="10%" class="img-fluid"></a>
+  <a class="navbar-brand" href="{% url 'page-home' %}"> 
+    <img src="../media/logo.png" height="10%" class="img-fluid">
             <div class="container-fluid px-2">
                 <a class="navbar-brand" href="{% url 'page-home' %}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul  class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-about' %}">O nas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-news' %}">Aktualności</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-products' %}">Produkty</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'page-contact' %}">Kontakt</a></li>
+                        <li class="nav-item {% active_link 'page-about' 'navbar-active' %}"><a class="nav-link" href="{% url 'page-about' %}">O nas</a></li>
+                        <li class="nav-item {% active_link 'page-news' 'navbar-active' %}"><a class="nav-link" href="{% url 'page-news' %}">Aktualności</a></li>
+                        <li class="nav-item {% active_link 'page-products' 'navbar-active' %}"><a class="nav-link" href="{% url 'page-products' %}">Produkty</a></li>
+                        <li class="nav-item {% active_link 'page-contact' 'navbar-active' %}"><a class="nav-link" href="{% url 'page-contact' %}">Kontakt</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profil użytkownika</a></li>
+                        <li class="nav-item {% active_link 'profile' 'navbar-active' %}"><a class="nav-link" href="{% url 'profile' %}">Profil użytkownika</a></li>
                         <!-- Button trigger LOGOUT modal -->
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Logout
