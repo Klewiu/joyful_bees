@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+<article class="media content-section">
+{% block content %}
+{{object.title}} : {{object.author}}
+<br>
+
+{{ object.content }}</br>
+<small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+</div>
+</div>
+</article>
+{% endblock content %}

@@ -121,7 +121,11 @@
     position:relative;
 }
 
-
+.post-image {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+  margin-bottom: 16px;
 
 
 
