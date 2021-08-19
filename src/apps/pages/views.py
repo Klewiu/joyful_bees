@@ -2,8 +2,10 @@ from django.shortcuts import render
 from apps.pages.models import Site_description
 from django.core.mail import send_mail
 from django.contrib import messages
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # from django.http import HttpResponse
 
@@ -78,6 +80,24 @@ class NewsView (ListView):
 class NewsDetailView(DetailView):
   model=Post
   template_name = 'pages/news_detail.html'
+
+
+class NewsCreateView (LoginRequiredMixin, CreateView):
+  model = Post
+  fields = ['title', 'content']
+  template_name = 'pages/news_create.html'
+
+  def form_valid(self, form):
+    form.instance.author = self.request.user
+    return super().form_valid(form)
+
+
+
+  
+
+
+
+ 
   
   
 
