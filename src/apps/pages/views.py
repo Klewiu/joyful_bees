@@ -27,7 +27,6 @@ def about(request):
     return render (request,'pages/about.html', context )
 
 
-
 def contact(request):
     if request.method =='POST':
         message_name = request.POST['message-name']

@@ -9,30 +9,38 @@
       <h2>{{ user.username }}</h2>
       <p class="text-warning">{{ user.email }}</p>
 
-      {% if request.user.is_authenticated and request.user.is_superuser %}
-      <div class="row">
-        <h5>Twoja lista produktów:</h5>
+{% comment %} Admin view only {% endcomment %}
 
-        <table class="table table-bordered">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Nazwa produktu </th>
-              <th scope="col">Cena</th>
-              <th scope="col">Dostępność</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for product in products %}
-            <tr>
-              <td>{{product.name}}</td>
-              <td class="text-center">{{product.price|floatformat:0}} zł</td>
-              <td class="text-center">{{product.availability}} szt</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+      {% if request.user.is_authenticated and request.user.is_superuser %}
+        <div class="row">
+          <h5>Twoja lista produktów:</h5>
+
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nazwa produktu </th>
+                <th scope="col">Cena</th>
+                <th scope="col">Dostępność</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <td>{{product.name}}</td>
+                <td class="text-center">{{product.price|floatformat:0}} zł</td>
+                <td class="text-center">{{product.availability}} szt</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% include 'customers/customers.html' %}
+        
       {% endif %}
+
+       
+
+     
 
       <br>
       <p class="maintenance">The site is under construction</p>

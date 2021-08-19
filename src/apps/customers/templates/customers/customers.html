@@ -1,0 +1,26 @@
+<div class="row">
+          <h5>Twoja lista klientów:</h5>
+
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nazwa klienta</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Data dodania klienta</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for customer in customers %}
+              <tr>
+                <td>{{customer.name}}</td>
+                <td class="text-center"><a href = "mailto:{{customer.email}};">{{customer.email}}</a></td>
+                <td class="text-center">{{customer.tel}}</td>
+                <td class="text-center">{{customer.address}}</td>
+                <td class="text-center">{{customer.created}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>

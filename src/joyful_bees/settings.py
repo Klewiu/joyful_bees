@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     #3rd party apps
     'crispy_forms',
     'active_link',
+    'phonenumber_field',
     
 ]
 
