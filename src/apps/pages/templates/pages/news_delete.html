@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="boarder-bottom mb-4">Usunięcie Posta</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Kasuj Post {{object}}</button>
+            <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Wróć</a>
+        </div>
+    </form>
+    <br>
+</div>
+<br>
+{% endblock content %}
