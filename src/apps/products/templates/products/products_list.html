@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> {{title}} </h1>
+
+<a href="{% url 'profile' %}">
+  <button type="button" class="btn btn-secondary mb-3 btn-sm">Powrót do menu admina</button>
+</a>
+        <div class="row">
+          <h5>Twoja lista produktów:</h5>
+
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nazwa produktu </th>
+                <th scope="col">Cena</th>
+                <th scope="col">Dostępność</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <td>{{product.name}}</td>
+                <td class="text-center">{{product.price|floatformat:0}} zł</td>
+                <td class="text-center">{{product.availability}} szt</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+{% endblock content %}

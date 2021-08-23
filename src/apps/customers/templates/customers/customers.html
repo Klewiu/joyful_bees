@@ -1,4 +1,14 @@
-<div class="row">
+
+{% extends "base.html" %}
+
+{% block content%}
+
+<h1> {{title}} </h1>
+
+<a href="{% url 'profile' %}">
+  <button type="button" class="btn btn-secondary mb-3 btn-sm">Powrót do menu admina</button>
+</a>
+        <div class="row">
           <h5>Twoja lista klientów:</h5>
 
           <table class="table table-bordered">
@@ -24,3 +34,6 @@
             </tbody>
           </table>
         </div>
+
+
+{% endblock content %}

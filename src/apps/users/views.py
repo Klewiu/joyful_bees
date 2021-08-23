@@ -24,10 +24,6 @@ def register (request):
 
 @login_required
 def profile (request):
-    
-    context = {
-        'products': Product.objects.all(),
-        'customers':Customer.objects.all(),
-    }
-    return render(request, 'users/profile.html', context)
+
+    return render(request, 'users/profile.html')
 

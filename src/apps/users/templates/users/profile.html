@@ -9,38 +9,21 @@
       <h2>{{ user.username }}</h2>
       <p class="text-warning">{{ user.email }}</p>
 
-{% comment %} Admin view only {% endcomment %}
+       {% comment %} ADMIN BUTTONS ONLY  {% endcomment %}
 
       {% if request.user.is_authenticated and request.user.is_superuser %}
-        <div class="row">
-          <h5>Twoja lista produktów:</h5>
-
-          <table class="table table-bordered">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Nazwa produktu </th>
-                <th scope="col">Cena</th>
-                <th scope="col">Dostępność</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for product in products %}
-              <tr>
-                <td>{{product.name}}</td>
-                <td class="text-center">{{product.price|floatformat:0}} zł</td>
-                <td class="text-center">{{product.availability}} szt</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+        <div class = "btn-example">
+              {% csrf_token %}
+              <a href="{% url 'page-customers' %}">
+              <button type="button" class="btn btn-primary mb-3 btn-lg">Baza klientów</button>
+              </a>
+              <br>
+              <a href="{% url 'page-products_list' %}">
+              <button type="button" class="btn btn-primary btn-lg">Lista produktów</button>
+              </a>
         </div>
-        {% include 'customers/customers.html' %}
-        
       {% endif %}
-
-       
-
-     
+                
 
       <br>
       <p class="maintenance">The site is under construction</p>
