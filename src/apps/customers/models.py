@@ -16,3 +16,10 @@ class Customer(models.Model):
     def email_str():
         email_string = str(Customer.email)
         return email_string
+
+    def email_all():
+        recievers = []
+        for customer in Customer.objects.all():
+            recievers.append(customer.email)
+            
+        return ";".join(recievers)

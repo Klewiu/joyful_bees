@@ -9,6 +9,7 @@ def customers (request):
     context = {
         'title':'Admin - Baza klientów',
         'customers': Customer.objects.all(),
+        'recievers': Customer.email_all(),
     }
 
     if request.user.is_authenticated and request.user.is_superuser:
