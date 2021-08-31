@@ -1,13 +1,18 @@
 {% extends "base.html" %}
-
-<article class="media content-section">
 {% block content %}
+<article class="media content-section">
 {{object.title}} : {{object.author}}
 <br>
 
 {{ object.content }}</br>
 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-</div>
-</div>
+<br>
+<br>
+{% if object.author == user %}
+<a class="btn btn-info" href="{% url 'post-update' object.id %}">Aktualizuj Post</a>
+<a class="btn btn-danger" href="{% url 'post-delete' object.id %}">Usuń Post</a>
+{% endif %}   
+
+
 </article>
 {% endblock content %}
