@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
 from phonenumber_field.modelfields import PhoneNumberField
+from django.urls import reverse
 
 # Create your models here.
 class Customer(models.Model):
@@ -12,6 +13,9 @@ class Customer(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    def get_absolute_url(self):
+        return reverse('customers-view')
 
     def email_str():
         email_string = str(Customer.email)
