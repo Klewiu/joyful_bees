@@ -13,8 +13,8 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <h5><a class="article-title">{{ customer.name }}</a></h5> 
-                <small class="text-muted">{{ customer.created|date:"F d, Y" }}</small>
+                <h5><a class="article-title" href="{% url 'customers-detail' customer.id %}">{{ customer.name }}</a></h5> 
+                {% comment %} <small class="text-muted">{{ customer.created|date:"F d, Y" }}</small> {% endcomment %}
             </div>
         </div>
     </article>
