@@ -133,16 +133,9 @@
   margin-bottom: 16px;
 }
 
-.carousel-item {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-}
 
 .carousel-caption{
-  position: absolute;
   font-family: "Lucida Control", monospace;
   filter: blur(0.5px);
-  background:rgba(0, 0, 0, 0.3);
-
+  background: rgba(0, 0, 0, 0.35);
 }
