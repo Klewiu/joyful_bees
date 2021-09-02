@@ -41,12 +41,16 @@ class CustomersView (ListView):
         'customers': Customer.objects.all(),
         'title':'ADMIN - lista klientów',
       }
-    return render (request,'customers/manage_customers.html', context)
+    
+    if request.user.is_authenticated and request.user.is_superuser:
+        return render (request,'customers/manage_customers.html', context)
+    return redirect('page-home')
+    
 
 class CustomersDetailView(DetailView):
+  
   model=Customer
   template_name = 'customers/customers_detail.html'
-
 
 class CustomersCreateView (LoginRequiredMixin, CreateView):
   model = Customer

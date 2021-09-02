@@ -10,7 +10,7 @@ class Customer(models.Model):
     tel = PhoneNumberField()
     address = models.CharField(max_length=80)
     created = models.DateTimeField(auto_now_add=True)
-
+    
     def __str__(self):
         return f"{self.name}"
 
