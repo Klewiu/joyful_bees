@@ -4,7 +4,6 @@ from .views import CustomersView, CustomersDetailView, CustomersCreateView, Cust
 
 
 urlpatterns = [
-    path('customers/', views.customers, name='page-customers'),
     path('manage_cusomers/', CustomersView.as_view(), name='customers-view'),
     path('customers/<int:pk>/', CustomersDetailView.as_view(), name='customers-detail'),
     path('customers/new/', CustomersCreateView.as_view(), name='customers-create'),

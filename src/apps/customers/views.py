@@ -7,29 +7,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 
 
-def customers (request):
-    context = {
-        'title':'Admin - Lista klientów',
-        'customers': Customer.objects.all(),
-        'recievers': Customer.email_all(),
-    }
-
-    if request.user.is_authenticated and request.user.is_superuser:
-        return render(request, 'customers/customers.html', context)
-    else:
-        return redirect('page-home')
-
-# def manage_customers (request):
-#     context = {
-#         'title':'Admin - Zarządzanie klientami',
-#         'customers': Customer.objects.all(),
-#     }
-
-#     if request.user.is_authenticated and request.user.is_superuser:
-#         return render(request, 'customers/manage_customers.html', context)
-#     else:
-#         return redirect('page-home')
-    
 
 # CLASS BASE VIEW FOR CUSTOMERS #
 
@@ -38,8 +15,9 @@ class CustomersView (ListView):
   def get (self, request, *args, **kwargs):
   
     context = {
-        'customers': Customer.objects.all(),
-        'title':'ADMIN - lista klientów',
+        'customers': Customer.objects.all().order_by('name'),
+        'title':'ADMIN - zarządzanie klientami',
+        'recievers': Customer.email_all(),
       }
     
     if request.user.is_authenticated and request.user.is_superuser:
@@ -47,8 +25,7 @@ class CustomersView (ListView):
     return redirect('page-home')
     
 
-class CustomersDetailView(DetailView):
-  
+class CustomersDetailView(DetailView): 
   model=Customer
   template_name = 'customers/customers_detail.html'
 

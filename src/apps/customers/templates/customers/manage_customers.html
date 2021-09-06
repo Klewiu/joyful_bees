@@ -5,20 +5,33 @@
 <h1> {{title}} </h1>
 
 {% if user.is_authenticated %}
-    <a class="btn btn-info" href="{% url 'customers-create' %}">Nowy klient</a>
+
+    <a class="btn btn-primary" href="{% url 'customers-create' %}">Nowy klient</a>
+    <a class="btn btn-primary" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
+    <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
 {% endif %}
 <br>
 <br>
-{% for customer in customers %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <h5><a class="article-title" href="{% url 'customers-detail' customer.id %}">{{ customer.name }}</a></h5> 
-                {% comment %} <small class="text-muted">{{ customer.created|date:"F d, Y" }}</small> {% endcomment %}
-            </div>
-        </div>
-    </article>
+<div>
+<table class="table table-sm table-bordered">
+    <thead class="thead">
+        <tr>
+            <th scope="col">Lp</th>
+            <th scope="col">Nazwa klienta <br><i><span style="font-size:11px; color:blue">Kliknij aby wyświetlić szczegóły</span></i></br></th>
+            <th scope="col">E-mail <br><i><span style="font-size:11px; color:blue">Kliknij aby wysłać email</span></i></br></th> 
+        </tr>
+    </thead>
 
-{% endfor %}
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'customers-detail' customer.id %}">{{ customer.name }}</a></td>
+            <td><a href="mailto:{{customer.email}};">{{customer.email}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
 
 {% endblock content %}
