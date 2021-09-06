@@ -1,3 +1,4 @@
+from django.http import response
 from django.shortcuts import render
 from apps.pages.models import Site_description
 from django.core.mail import send_mail
@@ -14,12 +15,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # function based views
 
 def home(request):
+
     context = {
         'title':'Strona główna',
         'site_description': Site_description.objects.all(),
       }
 
     return render (request,'pages/home.html', context)
+
+    
 
 def about(request):
     context = {
