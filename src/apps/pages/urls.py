@@ -11,4 +11,5 @@ urlpatterns = [
     path('contact/', views.contact, name='page-contact'),
     path('news/<int:pk>/update/', NewsUpdateView.as_view(), name='post-update'),
     path('news/<int:pk>/delete/', NewsDeleteView.as_view(), name='post-delete'),
+   
 ] 

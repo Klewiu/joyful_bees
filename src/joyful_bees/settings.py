@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'active_link',
     'phonenumber_field',
-    
+    'django_simple_cookie_consent',
 ]
 
 MIDDLEWARE = [

@@ -1,8 +1,11 @@
 {% load static %}
+{% load django_simple_cookie_consent_tags %}
+
 <!doctype html>
 <html lang="en">
 
   <head>
+    {% display_cookie_consent %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,5 +52,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
     
   </body>
+
+
   
 </html>
