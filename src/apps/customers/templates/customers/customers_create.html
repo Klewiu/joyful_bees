@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content%}
 <div>
-    <form method="POST">
+    <form method="POST" autocomplete="off">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="boarder-bottom mb-4">Nowy klient</legend>

@@ -1,28 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+        
+    <h1> {{title}} </h1>
 
-<h1> {{title}} </h1>
-
-<article class="media content-section">
-    Nazwa klienta: <b> {{object.name}} </b>
-    <br>  
-    Adres klienta: <b> {{object.address}} </b>
+    <article class="media content-section">
+        Nazwa klienta: <b> {{object.name}} </b>
+        <br>  
+        Adres klienta: <b> {{object.address}} </b>
+        <br>
+        Email klienta: <b> {{ object.email }} </b>
+        <br>
+        Telefon klienta: <b> {{ object.tel }} </b>
+        <br>
+        Data dodania: <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
     <br>
-    Email klienta: <b> {{ object.email }} </b>
     <br>
-    Telefon klienta: <b> {{ object.tel }} </b>
-    <br>
-    Data dodania: <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
-<br>
-<br>
 
-<a class="btn btn-info" href="{% url 'customers-view' %}">Powrót</a>
-<a class="btn btn-info" href="{% url 'customers-update' object.id %}">Aktualizuj dane klienta</a>
-<a class="btn btn-danger" href="{% url 'customers-delete' object.id %}">Usuń Klienta</a>
-
-  
+    <a class="btn btn-info" href="{% url 'customers-view' %}">Powrót</a>
+    <a class="btn btn-info" href="{% url 'customers-update' object.id %}">Aktualizuj dane klienta</a>
+    <a class="btn btn-danger" href="{% url 'customers-delete' object.id %}">Usuń Klienta</a>
+    </article>
 
 
-</article>
 {% endblock content %}

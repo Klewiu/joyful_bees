@@ -3,13 +3,11 @@
 {% block content%}
 
 <h1> {{title}} </h1>
+{% comment %}  BUTTONS FOR ADMIN  {% endcomment %}
+<a class="btn btn-primary" href="{% url 'customers-create' %}">Nowy klient</a>
+<a class="btn btn-primary" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
+<a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
 
-{% if user.is_authenticated %}
-
-    <a class="btn btn-primary" href="{% url 'customers-create' %}">Nowy klient</a>
-    <a class="btn btn-primary" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
-    <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
-{% endif %}
 <br>
 <br>
 <div>

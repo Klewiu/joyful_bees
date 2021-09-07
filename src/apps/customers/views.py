@@ -10,7 +10,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 # CLASS BASE VIEW FOR CUSTOMERS #
 
-class CustomersView (ListView):
+class AdminStaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+
+    def test_func(self):
+        return self.request.user.is_superuser or self.request.user.is_staff
+
+class CustomersView (AdminStaffRequiredMixin, ListView):
 
   def get (self, request, *args, **kwargs):
   
@@ -25,11 +30,11 @@ class CustomersView (ListView):
     return redirect('page-home')
     
 
-class CustomersDetailView(DetailView): 
+class CustomersDetailView(AdminStaffRequiredMixin, DetailView): 
   model=Customer
   template_name = 'customers/customers_detail.html'
 
-class CustomersCreateView (LoginRequiredMixin, CreateView):
+class CustomersCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateView):
   model = Customer
   fields = ['name', 'email', 'tel','address']
   template_name = 'customers/customers_create.html'
@@ -38,7 +43,7 @@ class CustomersCreateView (LoginRequiredMixin, CreateView):
     form.instance.author = self.request.user
     return super().form_valid(form)
 
-class CustomersUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class CustomersUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView):
   model=Customer
   template_name = 'customers/customers_create.html'
   fields = ['name', 'email', 'tel','address']
@@ -55,15 +60,10 @@ class CustomersUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 #     else:
 #       return False
 
-class CustomersDeleteView(LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
+class CustomersDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
   model=Customer
-  template_name = 'pages/customers_delete.html'
+  template_name = 'customers/customers_delete.html'
+  success_url = '/manage_customers/'
 
-#   def test_func(self):
-#     post = self.get_object()
-#     if self.request.user == post.author:
-#       return True
-#     else:
-#       return False
 
-  success_url = '/customers/'
+  

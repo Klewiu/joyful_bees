@@ -5,7 +5,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Customer(models.Model):
-    name =  models.CharField(max_length=50, help_text="Podaj imię i nazwisko lub unikalną nazwę klienta")
+    name =  models.CharField(max_length=50, help_text="Podaj imię i nazwisko lub unikalną nazwę klienta", unique=True)
     email = models.CharField(max_length=50)
     tel = PhoneNumberField()
     address = models.CharField(max_length=80)

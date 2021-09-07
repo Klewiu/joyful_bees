@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="boarder-bottom mb-4">Usunięcie klienta</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit" value="confirm">Kasuj Klienta {{object}}</button>
+            <a class="btn btn-outline-secondary" href="{% url 'customers-view' %}">Wróć do listy klientów</a>
+        </div>
+    </form>
+    <br>
+</div>
+<br>
+{% endblock content %}
