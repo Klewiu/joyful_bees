@@ -14,6 +14,7 @@ class Customer(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+    # it makes our model responsive, if we change path in url it would still work #
     def get_absolute_url(self):
         return reverse('customers-view')
 
@@ -21,6 +22,7 @@ class Customer(models.Model):
         email_string = str(Customer.email)
         return email_string
 
+    # Function that create list of all customers emials, separate with ;  #
     def email_all():
         recievers = []
         for customer in Customer.objects.all():
