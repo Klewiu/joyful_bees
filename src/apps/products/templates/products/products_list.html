@@ -4,29 +4,35 @@
 
 <h1> {{title}} </h1>
 
+{% comment %} BUTTONS FOR ADMIN {% endcomment %}
+<a class="btn btn-info" href="">Nowy produkt</a>
 <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
 
-        <div class="row">
-          <h5>Twoja lista produktów:</h5>
+<br>
+<br>
+<div>
+  <table class="table table-sm table-bordered">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Lp</th>
+        <th scope="col">Nazwa produktu <br><i><span style="font-size:11px; color:blue">Kliknij aby wyświetlić
+              szczegóły</span></i></br></th>
+        <th scope="col">Cena</th>
+        <th scope="col">Dostępność</th>
+      </tr>
+    </thead>
 
-          <table class="table table-bordered">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Nazwa produktu </th>
-                <th scope="col">Cena</th>
-                <th scope="col">Dostępność</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for product in products %}
-              <tr>
-                <td>{{product.name}}</td>
-                <td class="text-center">{{product.price|floatformat:0}} zł</td>
-                <td class="text-center">{{product.availability}} szt</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-        
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a href="">{{ product.name }}</a></td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.availability }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
 {% endblock content %}
