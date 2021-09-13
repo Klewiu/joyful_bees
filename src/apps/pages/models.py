@@ -30,4 +30,10 @@ class Site_description (models.Model):
     news_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
     product_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
     product_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
+    privacy_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
+    privacy_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
+    terms_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
+    terms_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
+    faq_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
+    faq_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
 

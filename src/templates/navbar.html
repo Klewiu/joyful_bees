@@ -1,4 +1,5 @@
 {% load active_link_tags %}
+
 <!-- LOGOUT MODAL -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -41,6 +42,7 @@
           {% if user.is_authenticated %}
           <li class="nav-item {% active_link 'profile' 'navbar-active' %}"><a class="nav-link"
               href="{% url 'profile' %}">Profil użytkownika</a></li>
+
           <!-- Button trigger LOGOUT modal -->
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Logout
@@ -51,3 +53,7 @@
       </div>
     </div>
 </nav>
+
+
+
+ 
