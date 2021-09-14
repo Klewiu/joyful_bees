@@ -22,8 +22,7 @@ def home(request):
       }
 
     return render (request,'pages/home.html', context)
-
-    
+      
 
 def about(request):
     context = {
@@ -31,6 +30,27 @@ def about(request):
         'site_description': Site_description.objects.all(),
       }
     return render (request,'pages/about.html', context )
+
+def privacy(request):
+    context = {
+        'title':'Polityka Prywatności',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/privacy.html', context )
+
+def terms(request):
+    context = {
+        'title':'Regulamin',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/terms.html', context )
+
+def faq(request):
+    context = {
+        'title':'Często Zadawane Pytania',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/faq.html', context )
 
 
 def contact(request):
