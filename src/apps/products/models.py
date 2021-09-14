@@ -12,6 +12,9 @@ class Product(models.Model):
     update = models.DateTimeField(auto_now=True)
     availability = models.IntegerField(default=0)
 
+    def get_absolute_url(self):
+        return reverse('products-list')
+
     def clean(self):
 
         if not self.image:

@@ -52,14 +52,6 @@ class CustomersUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPasse
     # form.instance.author = self.request.user
     return super().form_valid(form)
 
-#checks for currently logged  user to update posts related to current user
-#   def test_func(self):
-#     post = self.get_object()
-#     if self.request.user == post.author:
-#       return True
-#     else:
-#       return False
-
 class CustomersDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
   model=Customer
   template_name = 'customers/customers_delete.html'
