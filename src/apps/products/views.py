@@ -52,9 +52,9 @@ class ProductsView (AdminStaffRequiredMixin, ListView):
     return redirect('page-home')
     
 
-# class CustomersDetailView(AdminStaffRequiredMixin, DetailView): 
-#   model=Product
-#   template_name = 'customers/customers_detail.html'
+class ProductsDetailView(AdminStaffRequiredMixin, DetailView): 
+  model=Product
+  template_name = 'products/products_detail.html'
 
 # class CustomersCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateView):
 #   model = Product

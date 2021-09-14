@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+        
+    <h1> {{title}} </h1>
+
+    <article class="media content-section">
+        Nazwa produktu: <b> {{object.name}} </b>
+        <br>  
+        Opis produktu: <b> {{object.description}} </b>
+        <br>
+        Cena produktu: <b> {{ object.price }} </b>
+        <br>
+        Dostępność produktu: <b> {{ object.availability }} </b>
+        <br>
+        Data dodania: <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
+        <br>
+        Data aktualizacji: <small class="text-muted">{{ object.update|date:"F d, Y" }}</small>
+        <br>
+        Zdjęcie: {{ object.image }}
+    <br>
+    <br>
+
+    <a class="btn btn-info" href="{% url 'products-list' %}">Powrót</a>
+    <a class="btn btn-info" href="">Aktualizuj dane produktu</a>
+    <a class="btn btn-danger" href="">Usuń produkt</a>
+    </article>
+
+
+{% endblock content %}

@@ -26,7 +26,7 @@
       {% for product in products %}
       <tr>
         <td>{{ forloop.counter }}</td>
-        <td><a href="">{{ product.name }}</a></td>
+        <td><a href="{% url 'products-detail' product.id %}">{{ product.name }}</a></td>
         <td>{{ product.price }}</td>
         <td>{{ product.availability }}</td>
       </tr>
