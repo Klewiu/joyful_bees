@@ -4,6 +4,7 @@ from apps.pages.models import Site_description
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+# from .forms import NewProductForm
 
 # Create your views here.
 
@@ -60,6 +61,7 @@ class ProductsCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateVie
   model = Product
   fields = ['name', 'description', 'price','availability','image']
   template_name = 'products/products_create.html'
+
 
   def form_valid(self, form):
     form.instance.author = self.request.user
