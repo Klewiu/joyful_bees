@@ -5,7 +5,7 @@
 <h1> {{title}} </h1>
 
 {% comment %} BUTTONS FOR ADMIN {% endcomment %}
-<a class="btn btn-info" href="">Nowy produkt</a>
+<a class="btn btn-info" href="{% url 'products-create' %}">Nowy produkt</a>
 <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
 
 <br>

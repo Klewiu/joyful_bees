@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="boarder-bottom mb-2">Nowy produkt</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <br>
+            <button class="btn btn-info" type="submit">Dodaj</button>
+            <a class="btn btn-secondary" href="{% url 'products-list' %}">Powrót</a>
+        </div>
+    </form>
+
+    <br>
+</div>
+<br>
+{% endblock content %}

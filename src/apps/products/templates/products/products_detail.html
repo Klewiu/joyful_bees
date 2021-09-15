@@ -5,24 +5,19 @@
     <h1> {{title}} </h1>
 
     <article class="media content-section">
-        Nazwa produktu: <b> {{object.name}} </b>
-        <br>  
-        Opis produktu: <b> {{object.description}} </b>
+        <b>Nazwa produktu:</b> <br> {{object.name}} </br>
+        <b>Opis produktu: </b><br> {{object.description}} </br>
+        <b>Cena produktu: </b><br> {{ object.price }} </br>
+        <b>Dostępność produktu: </b><br> {{ object.availability }} </br>    
+        <b>Data utworzenia:</b> <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
         <br>
-        Cena produktu: <b> {{ object.price }} </b>
+        <b>Data aktualizacji:</b> <small class="text-muted">{{ object.update|date:"F d, Y" }}</small>
         <br>
-        Dostępność produktu: <b> {{ object.availability }} </b>
-        <br>
-        Data dodania: <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
-        <br>
-        Data aktualizacji: <small class="text-muted">{{ object.update|date:"F d, Y" }}</small>
-        <br>
-        Zdjęcie: {{ object.image }}
-    <br>
+        <b>Zdjęcie:</b><br> <img class="rounded-circle" src="{{ object.image.url }}"></br>
     <br>
 
     <a class="btn btn-info" href="{% url 'products-list' %}">Powrót</a>
-    <a class="btn btn-info" href="">Aktualizuj dane produktu</a>
+    <a class="btn btn-info" href="{% url 'products-create' %}">Aktualizuj dane produktu</a>
     <a class="btn btn-danger" href="">Usuń produkt</a>
     </article>
 
