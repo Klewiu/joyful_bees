@@ -6,11 +6,12 @@
     <form method="POST" autocomplete="off" enctype="multipart/form-data"> 
         {% csrf_token %}
             <fieldset="form-group">
-                <legend class="boarder-bottom mb-2">Nowy produkt</legend>
+                <legend class="boarder-bottom mb-2">Tworzenie nowego produktu</legend>
                 {{form|crispy}}
             </fieldset>
         <div class="form-group">
             <br>
+    
             <button class="btn btn-info" type="submit">Dodaj</button>
             <a class="btn btn-secondary" href="{% url 'products-list' %}">Powrót</a>
         </div>
