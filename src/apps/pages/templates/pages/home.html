@@ -10,7 +10,7 @@
 
 
 
-<!-- carousel slider -->
+<!-- Carousel Slider -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -48,8 +48,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only"></span>
@@ -59,7 +59,43 @@
         <span class="sr-only"></span>
     </a>
 </div>
+<br>
+<br>
 
+<!-- Homepage Main Info -->
 
+<div class="row">
+    <div class="col-sm-8">
+        <img class="d-block w-100" src="/media/pexels-5.jpg">
+    </div>
+    <div class="col-sm-4">
+        <h4>O nas</h4>
+        <p>Jesteśmy pasieką rodzinną, podchodzimy do pszczół z pasją i zaangażowaniem. Nasza pasieka istnieje oficjalnie od 2021 roku, choć zainteresowanie pszczołami rozwijamy już od lat 90-tych.</p>
+        <a class="btn btn-outline-secondary btn-sm" href="{% url 'page-about' %}">Czytaj więcej</a>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-8">
+        <img class="d-block w-100" src="/media/pexels-6.jpg">
+        
+    </div>
+    <div class="col-sm-4">
+        <h4>Nasze Produkty</h4>
+        <p>Nasze produkty są 100% naturalne, nie kremujemy ani nie podgrzewamy naszych miodów. Posiadamy ofertę różnych miodów jak np. wielokwiatowe, akacjowe, czy nawłociowe. Zapraszamy do zapoznania się z naszą ofertą.</p>
+        <a class="btn btn-outline-secondary btn-sm" href="{% url 'page-products' %}">Czytaj więcej</a>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-8">
+        <img class="d-block w-100" src="/media/pexels-5.jpg">
+    </div>
+    <div class="col-sm-4">
+        <h4>Aktualności i Wydarzenia</h4>
+        <p>Zapraszamy do śledzenia aktualności na naszej stronie oraz odwiedzenia naszego profilu na Facebooku, w dziale kontakt znajdziecie Państwo także nasze dane kontaktowe.</p>
+        <a class="btn btn-outline-secondary btn-sm" href="{% url 'page-news' %}">Czytaj więcej</a>
+    </div>
+  </div>
 
 {% endblock content %}
