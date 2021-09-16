@@ -5,18 +5,18 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="boarder-bottom mb-4">Registration for Moderators</legend>
+            <legend class="boarder-bottom mb-4">Opcjonalna rejestracja konta dla moderatorów</legend>
             {{form|crispy}}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Register Now</button>
+            <button class="btn btn-outline-info" type="submit">Zarejestruj się</button>
         </div>
 
     </form>
     <br>
     <div class="border-top pt-3">
         <small class="text-muted">   
-            Already have an account? <a href="{% url 'login' %}">Sign In</a>
+            Masz już konto? <a href="{% url 'login' %}">Zaloguj tutaj</a>
         </small>
     </div>
 </div>
