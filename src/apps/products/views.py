@@ -7,7 +7,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # from .forms import NewProductForm
 
 # Create your views here.
-
 def products(request):
     
     context = {
@@ -66,7 +65,7 @@ class ProductsCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateVie
   def form_valid(self, form):
     form.instance.author = self.request.user
     return super().form_valid(form)
-
+ 
 # class CustomersUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 #   model=Product
 #   template_name = 'customers/customers_create.html'
