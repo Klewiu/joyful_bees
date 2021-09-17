@@ -28,6 +28,7 @@ urlpatterns = [
     path('', include('apps.products.urls')),
     path('', include('apps.users.urls')),
     path('', include('apps.customers.urls')),
+    path('', include('apps.newsletter.urls')),
 ] 
 
 if settings.DEBUG:
