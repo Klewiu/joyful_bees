@@ -61,19 +61,18 @@ class ProductsCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateVie
   fields = ['name', 'description', 'price','availability','image']
   template_name = 'products/products_create.html'
 
-
   def form_valid(self, form):
     form.instance.author = self.request.user
     return super().form_valid(form)
  
-# class CustomersUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-#   model=Product
-#   template_name = 'customers/customers_create.html'
-#   fields = ['name', 'email', 'tel','address']
+class ProductsUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+  model=Product
+  template_name = 'products/products_create.html'
+  fields = ['name', 'description', 'price','availability','image']
 
-#   def form_valid(self, form):
-#     # form.instance.author = self.request.user
-#     return super().form_valid(form)
+  def form_valid(self, form):
+    # form.instance.author = self.request.user
+    return super().form_valid(form)
 
 # class CustomersDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
 #   model=Product
