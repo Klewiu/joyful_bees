@@ -11,7 +11,8 @@
 {% if object.author == user %}
 <a class="btn btn-info" href="{% url 'post-update' object.id %}">Aktualizuj Post</a>
 <a class="btn btn-danger" href="{% url 'post-delete' object.id %}">Usuń Post</a>
-{% endif %}   
+{% endif %} 
+<a class="btn btn-secondary" href="{% url 'page-news' %}">Powrót</a>  
 
 
 </article>
