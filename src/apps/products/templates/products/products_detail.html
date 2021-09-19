@@ -18,7 +18,7 @@
 
     <a class="btn btn-info" href="{% url 'products-list' %}">Powrót</a>
     <a class="btn btn-info" href="{% url 'products-update' object.id %}">Aktualizuj dane produktu</a>
-    <a class="btn btn-danger" href="">Usuń produkt</a>
+    <a class="btn btn-danger" href="{% url 'products-delete' object.id %}">Usuń produkt</a>
     </article>
 
 

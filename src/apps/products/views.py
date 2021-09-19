@@ -71,10 +71,9 @@ class ProductsUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPasses
   fields = ['name', 'description', 'price','availability','image']
 
   def form_valid(self, form):
-    # form.instance.author = self.request.user
     return super().form_valid(form)
 
-# class CustomersDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
-#   model=Product
-#   template_name = 'customers/customers_delete.html'
-#   success_url = '/manage_customers/'
+class ProductsDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin,  DeleteView):
+  model=Product
+  template_name = 'products/products_delete.html'
+  success_url = '/products_list/'
