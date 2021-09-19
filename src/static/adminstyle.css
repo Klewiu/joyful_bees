@@ -1,0 +1,37 @@
+#header {
+    background: beige;
+    color: grey;
+    overflow: hidden;
+}
+
+#header a:link, #header a:visited {
+    color: black;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: beige;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: grey;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+:root {
+    --primary: beige;
+    --secondary: black;
+    --header-color: green;
+    --link-fg: grey;
+    --breadcrumbs-link-fg: grey;
+    --link-selected-fg: green;
+    --breadcrumbs-fg: green;
+}
+a.section:link, a.section:visited {
+    color: grey;
+    text-decoration: none;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background:green;
+    color: white;
+}
