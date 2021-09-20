@@ -1,6 +1,22 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content%}
+
 <h1> {{title}} </h1>
+<h4>Zapisz się do newslettera i odbieraj od nas najświeższe informacje dotyczące naszej pasieki i oferty.</h4>
+
+<form method="POST">
+    {% csrf_token %}
+        <div class="col-sm-4">
+            {{form|crispy}}
+        </div>
+    <br>
+    <div class="col-sm-4">
+        <input class="btn btn-info" type='submit' value='Zapisz Się'>
+    </div>
+
+</form>
+
 
 {% endblock content %}
