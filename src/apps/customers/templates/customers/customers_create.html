@@ -5,8 +5,10 @@
     <form method="POST" autocomplete="off">
         {% csrf_token %}
         <fieldset class="form-group">
+        <div class="col-sm-5">
             <legend class="boarder-bottom mb-4">Tworzenie nowego klienta</legend>
             {{form|crispy}}
+        </div>
         </fieldset>
         <div class="form-group">
             <br>

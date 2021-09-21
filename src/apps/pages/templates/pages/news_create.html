@@ -6,7 +6,9 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="boarder-bottom mb-4">Tworzenie nowego posta</legend>
+            <div class="col-sm-6">
             {{form|crispy}}
+            </div>
         </fieldset>
         <div class="form-group">
         <br>
