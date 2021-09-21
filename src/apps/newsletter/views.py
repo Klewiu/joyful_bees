@@ -10,7 +10,6 @@ def newsletters(request):
         form =NewsletterUserForm(request.POST)
         if form.is_valid():
             form.save() 
-            email= form.cleaned_data.get('email')
             messages.success(request, f'Dziękujemy za zapisanie adresu {email} do naszego newslettera!')
             return redirect('/')
             

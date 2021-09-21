@@ -4,7 +4,7 @@
 {% block content%}
 
 <h1> {{title}} </h1>
-<h4>Zapisz się do newslettera i odbieraj od nas najświeższe informacje dotyczące naszej pasieki i oferty.</h4>
+<h4>Zapisz się do newslettera i odbieraj najświeższe informacje dotyczące naszej pasieki i oferty.</h4>
 
 <form method="POST">
     {% csrf_token %}
@@ -17,6 +17,16 @@
     </div>
 
 </form>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <p>Spokojnie, nie będziemy wysyłać Ci tony niepotrzebnych wiadomości. Zapisz się do newslettera i dowiedz się pierwszy/pierwsza, kiedy w naszej pasiecie pojawi się nowa dostawa miodów lub innych interesujących produktów.</p>
+    </div>
 
+</div>
+ 
+  
+    
+</div>
 
 {% endblock content %}
