@@ -7,10 +7,11 @@
     <p class="alert-light"><b>{{description.news_description_2}}</b></p>
 {% endfor %}
 
+<p>Chcesz wiedzieć kiedy mamy świeżą dostawę miodów? Zapisz się do <a href="{% url 'newsletter' %}">Newslettera</a></p>
+
 {% if user.is_authenticated %}
 <a class="btn btn-info" href="{% url 'news-create' %}">Dodaj nowy Post</a>
 {% endif %}
-<br>
 <br>
 {% for post in posts %}
 <article class="media content-section">
