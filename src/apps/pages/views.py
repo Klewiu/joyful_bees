@@ -65,7 +65,7 @@ def contact(request):
             f'Formularz Kontaktowy, wiadomość od {message_name}',
             f'Wiadomość ze strony Pasieka Radość od {message_email}: {message}',
             message_email,
-            ['tomekklewicki@wp.pl'],)
+            ['pasiekaradosc@gmail.com'],)
           messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany')
         else:
           messages.warning(request, 'Wypełnij wszystkie pola formularza przed wysłaniem')

@@ -14,6 +14,11 @@ class NewsletterUserForm (forms.ModelForm):
         if qs.exists():
             raise forms.ValidationError("Ten email już istnieje w naszej bazie")
 
-        return email 
+        return email
+
+class MailMessageForm(forms.ModelForm):
+    class Meta:
+        model = MailMessage
+        fields = '__all__'
 
 
