@@ -6,7 +6,7 @@ from django.urls import reverse
 class Product(models.Model):
     name = models.CharField(max_length=40, verbose_name='Nazwa produktu')
     description = models.TextField(max_length=500, verbose_name='Opis produktu')
-    image = models.ImageField(upload_to='products', default='no_picture.png',verbose_name='Zdjęcie produktu', help_text="! UWAGA ! - Zdjęcie musi mieć dokładnie 450x450 pixeli - ! UWAGA !")
+    image = models.ImageField(upload_to='products', default='no_picture.png',verbose_name='Zdjęcie produktu', help_text="ZDJĘCIE MIUSI MIEĆ 450x450 px!")
     price = models.FloatField(help_text=' PLN', verbose_name='Cena produktu')
     created = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)

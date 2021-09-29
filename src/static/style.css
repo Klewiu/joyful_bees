@@ -1,9 +1,12 @@
 .jumbo-text{
-  font:x-large;
-  color:beige;
-  size: 20px;
+  color:white;
+  font-size: 4vw;
+  font-family: 'Amatic SC', cursive;
   text-align:center;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: 0 0 7px #dbdbdb, 0 0 7px #e7e7e7,
+  0 0 20px #dadada, 0 0 20px #ffffff,
+  0 0 20px #e4e4e4;
+  letter-spacing: 1px;
 }
 .navbar{
   background-color: beige;
@@ -14,6 +17,9 @@
   align-items: center;
 }
 
+.title{
+  font-family: 'Amatic SC', cursive;
+}
 
 .navbar-brand{
      margin-left:15px !important; 
@@ -44,8 +50,8 @@
 .jumbotron {
     background-image: url("../media/Baner_mid_res2.jpg");
     background-size: cover;
-    padding-top: 7%;
-    padding-bottom: 12%;
+    padding-top: 8%;
+    padding-bottom: 8%;
   }
 
 .page_description{

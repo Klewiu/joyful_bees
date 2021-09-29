@@ -6,7 +6,7 @@
 <h1> {{title}} </h1>
 <h4>Zapisz się do newslettera i odbieraj najświeższe informacje dotyczące naszej pasieki i oferty.</h4>
 
-<form method="POST">
+<form method="POST" autocomplete="off">
     {% csrf_token %}
         <div class="col-sm-4">
             {{form|crispy}}

@@ -13,6 +13,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # Create your views here.
 
 # function based views
+def base(request):
+
+    context = {
+        'site_description': Site_description.objects.all(),
+      }
+
+    return render (request,'/base.html', context) 
+
 
 def home(request):
 

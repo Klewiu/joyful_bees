@@ -36,4 +36,5 @@ class Site_description (models.Model):
     terms_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
     faq_description_1 = models.TextField(default="Wpisz opis w panelu admin", max_length=1000, null=True, blank=True)
     faq_description_2 = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
+    jumbotron = models.TextField(default="Wpisz opis w panelu admin", max_length=500, null=True, blank=True)
 

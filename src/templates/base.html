@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="{% static 'main.js' %}" defer></script>
     
+
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+      <style>
+            font-family: 'Amatic SC', cursive;
+      </style>
+
+
+
     {% block scripts %}
     {% endblock scripts %}
 
@@ -30,12 +38,19 @@
   </head>
 
   <body>
-    
+
+  {% comment %} JUMBOTRON  {% endcomment %}
+
   <div class="jumbotron jumbotron-fluid">
     <div class="container" onclick="location.href='{% url 'page-home' %}';" style="cursor: pointer;">
-      <h3 class="jumbo-text">Zapraszamy po zdrowe i naturalne miody z lokalnej pasieki</h3> 
+      {% for description in site_description %}
+        <h3 class="jumbo-text">{{description.jumbotron}}</h3>
+      {% endfor %} 
     </div> 
   </div> 
+  
+{% comment %} INLUDING NAVBAR {% endcomment %}
+
   {% include 'navbar.html' %}
     <br>
     <div class="container mt-3 mb-3">

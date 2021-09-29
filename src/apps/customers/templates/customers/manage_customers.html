@@ -2,7 +2,7 @@
 
 {% block content%}
 
-<h1> {{title}} </h1>
+<h1 class = "title"> {{title}} </h1>
 {% comment %}  BUTTONS FOR ADMIN  {% endcomment %}
 <a class="btn btn-info" href="{% url 'customers-create' %}">Nowy klient</a>
 <a class="btn btn-info" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
