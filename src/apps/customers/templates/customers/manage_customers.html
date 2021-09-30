@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags%}
 {% block content%}
 
 <h1 class = "title"> {{title}} </h1>
@@ -11,6 +11,14 @@
 
 <br>
 <br>
+
+<div class="col-sm-5">
+    <form action="" method="get" autocomplete="off">
+        {{ filter.form|crispy }}
+        <p></p><button class="btn btn-success" type="submit">Szukaj</button>
+    </form>
+    <br>
+</div>
 <div>
 <table class="table table-sm table-bordered">
     <thead class="thead">
@@ -22,7 +30,7 @@
     </thead>
 
     <tbody>
-        {% for customer in customers %}
+        {% for customer in object_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
             <td><a href="{% url 'customers-detail' customer.id %}">{{ customer.name }}</a></td>

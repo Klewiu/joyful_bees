@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'active_link',
     'phonenumber_field',
     'django_simple_cookie_consent',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
