@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from apps.products.models import Product
 from apps.pages.models import Site_description
-from django.shortcuts import redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
+from django_filters.views import FilterView
+from .filters import ProductFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # from .forms import NewProductForm
 
@@ -37,19 +38,29 @@ class AdminStaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_superuser or self.request.user.is_staff
 
-# Class that shows all products - only for admin #
-class ProductsView (AdminStaffRequiredMixin, ListView):
+# Class that shows all products with filtration - only for admin #
+class ProductsView (AdminStaffRequiredMixin, FilterView):
+    model=Product
+    template_name = 'products/products_list.html'
+    filterset_class = ProductFilter
 
-  def get (self, request, *args, **kwargs):
+    def get_queryset(self):
+      qs = self.model.objects.all()
+      product_filtered_list = ProductFilter(self.request.GET, queryset=qs)
+      return product_filtered_list.qs
+
+# class ProductsView (AdminStaffRequiredMixin, ListView):
+
+#   def get (self, request, *args, **kwargs):
   
-    context = {
-        'products': Product.objects.all().order_by('name'),
-        'title':'ADMIN - zarządzanie produktami',
-      }
+#     context = {
+#         'products': Product.objects.all().order_by('name'),
+#         'title':'ADMIN - zarządzanie produktami',
+#       }
     
-    if request.user.is_authenticated and request.user.is_superuser:
-        return render (request,'products/products_list.html', context)
-    return redirect('page-home')
+#     if request.user.is_authenticated and request.user.is_superuser:
+#         return render (request,'products/products_list.html', context)
+#     return redirect('page-home')
     
 
 class ProductsDetailView(AdminStaffRequiredMixin, DetailView): 

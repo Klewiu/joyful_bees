@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from apps.customers.models import Customer
-from django.shortcuts import redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 from django_filters.views import FilterView
+from .filters import CustomerFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .filters import OrderFilter
+
 # Create your views here.
 
 # CLASS BASE VIEW FOR CUSTOMERS #
@@ -15,15 +15,15 @@ class AdminStaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_superuser or self.request.user.is_staff
 
-# Class that shows all customers - only for admin #
+# Class that shows all customers with filtration - only for admin #
 class CustomersView (AdminStaffRequiredMixin, FilterView):
     model=Customer
     template_name = 'customers/manage_customers.html'
-    filterset_class = OrderFilter
+    filterset_class = CustomerFilter
 
     def get_queryset(self):
       qs = self.model.objects.all()
-      customer_filtered_list = OrderFilter(self.request.GET, queryset=qs)
+      customer_filtered_list = CustomerFilter(self.request.GET, queryset=qs)
       return customer_filtered_list.qs
 
 class CustomersDetailView(AdminStaffRequiredMixin, DetailView): 
