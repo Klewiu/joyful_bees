@@ -8,7 +8,7 @@ from apps.products.models import Product
 
 
 # Create your views here.
-
+@login_required
 def register (request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
