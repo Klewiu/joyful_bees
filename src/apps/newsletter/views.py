@@ -70,3 +70,5 @@ def runletter(request):
 
     return render(request,'newsletter/runletter.html', context)
 
+    
+
