@@ -1,41 +1,83 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class = "title"> Nasze {{title}} </h1>
+<h1 class="title"> Nasze {{title}} </h1>
 {% for description in site_description %}
-    <p class="page_description alert-light">{{description.product_description_1}}</p>
-    <p class="alert-light"><b> {{description.product_description_2}}</b></p>
+<p class="page_description alert-light">{{description.product_description_1}}</p>
+<p class="alert-light"><b> {{description.product_description_2}}</b></p>
 {% endfor %}
 <br>
-<div class="container">
+
+<div container>
     <div class="row">
         {% for product in products %}
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    {% if product.image %}
-                    <img class="card-img-top" src="{{ product.image.url }}" class="img-fluid" alt="{{product.name}}" data-holder-rendered="true">
-                    {% endif %}
-                    <div class="card-body">
-                        <p class="card-text"><b>{{ product.name }}</b>
-                            <p style="text-align: justify"> {{product.description}}</p></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <medium ><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
-                                
-                            </div>
-                            <div>
-                                {% if product.availability > 5 %}
-                                <p style="color:green">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
-                                {% elif product.availability > 0 and product.availability < 6 %}
-                                <p style="color:darkorange">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
-                                {% else %}
-                                <p style="color:darkred">PRODUKT OBECNIE NIEDOSTĘPNY </p>
-                                {% endif %}
-                            </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+            <div class="card">
+                {% if product.image %}
+                <img class="card-img-top" src="{{ product.image.url }}">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title"><a>{{ product.name }}</a></h5>
+                    <p class="card-text mb-4">{{product.description}}</p>
+                    <div class="row">
+                        <div class="col">
+                            <medium><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
+                            {% if product.availability > 5 %}
+                            <p style="color:green">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                            {% elif product.availability > 0 and product.availability < 6 %}
+                            <p style="color:darkorange">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                            {% else %}
+                            <p style="color:darkred">PRODUKT OBECNIE NIEDOSTĘPNY </p>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% comment %} <div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                {% if product.image %}
+                <img class="card-img-top" src="{{ product.image.url }}" class="img-fluid" alt="{{product.name}}"
+                    data-holder-rendered="true">
+                {% endif %}
+                <div class="card-body">
+                    <p class="card-text"><b>{{ product.name }}</b>
+                        <p style="text-align: justify"> {{product.description}}</p>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <medium><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
+
+                    </div>
+                    <div>
+                        {% if product.availability > 5 %}
+                        <p style="color:green">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                        {% elif product.availability > 0 and product.availability < 6 %}
+                        <p style="color:darkorange">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                        {% else %}
+                        <p style="color:darkred">PRODUKT OBECNIE NIEDOSTĘPNY </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endfor %}
     </div>
     <br>
-</div>
+</div> {% endcomment %}
 {% endblock content %}

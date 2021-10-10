@@ -64,21 +64,14 @@
   }
 
 .card {
-    position: relative;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color:beige;
-    color: rgb(68, 68, 68);
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .5rem;
-
-}
+  border-radius: .5rem;
+  border: 1px solid lightgray;
+  background-color:beige;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: justify;
+  margin-bottom: 10px;
+} 
 
 .card2 {
   display: flex;
@@ -87,9 +80,7 @@
   background-clip:content-box;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .5rem;
-
 }
-
 
 .card-img-top {
   border-top-left-radius: calc(.25rem - 1px);
