@@ -3,8 +3,8 @@
   font-size: 4vw;
   font-family: 'Amatic SC', cursive;
   text-align:center;
-  text-shadow: 0 0 7px #dbdbdb, 0 0 7px #e7e7e7,
-  0 0 20px #dadada, 0 0 20px #ffffff,
+  text-shadow: 0 0 7px #ebd61b, 0 0 7px #e7e7e7,
+  0 0 20px #dbaa07, 0 0 20px #ffffff,
   0 0 20px #e4e4e4;
   letter-spacing: 1px;
 }
@@ -64,21 +64,12 @@
   }
 
 .card {
-    position: relative;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color:beige;
-    color: rgb(68, 68, 68);
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .5rem;
-
-}
+  border-radius: .5rem;
+  border: 1px solid lightgray;
+  background-color:beige;
+  text-align: justify;
+  margin-bottom: 10px;
+} 
 
 .card2 {
   display: flex;
@@ -87,9 +78,7 @@
   background-clip:content-box;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .5rem;
-
 }
-
 
 .card-img-top {
   border-top-left-radius: calc(.25rem - 1px);
