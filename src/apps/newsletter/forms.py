@@ -1,19 +1,17 @@
 from django import forms
 from .models import NewsletterUser, MailMessage
 
+
 class NewsletterUserForm (forms.ModelForm):
-    email = forms.EmailField()
+    email = forms.EmailField(label='Twój email',
+                             max_length=100,
+                             widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    
+    
     
     class Meta:
         model = NewsletterUser
         fields = ['email']
-
-    def clean_email (self, *args, **kwargs):
-        email= self.cleaned_data.get('email')
-        # qs= NewsletterUser.objects.filter(email__iexact=email)
-        # if qs.exists():
-        #     raise forms.ValidationError("Ten email już istnieje w naszej bazie")
-        return email
 
 class MailMessageForm(forms.ModelForm):
     class Meta:
