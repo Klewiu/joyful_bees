@@ -5,28 +5,34 @@
 
 <h1> {{title}} </h1>
 <h4>Zapisz się do newslettera i odbieraj najświeższe informacje dotyczące naszej pasieki i oferty.</h4>
+<div class="col-12">
 
-<form method="POST" autocomplete="off">
-    {% csrf_token %}
+    {% if email %}
+    <p class="alert alert-info">Na {{ email }} {{ action }} wiadomość weryfikacyjną. Otwórz wiadomość i kliknij w link
+        aby dodać adres do newslettera. </p>
+    {% endif %}
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
         <div class="col-sm-4">
             {{form|crispy}}
         </div>
+        <br>
+        <div class="col-sm-4">
+            <input class="btn btn-info" type='submit' value='Zapisz Się'>
+        </div>
+    </form>
     <br>
-    <div class="col-sm-4">
-        <input class="btn btn-info" type='submit' value='Zapisz Się'>
+    <div class="row">
+        <div class="col-sm-4">
+            <p>Spokojnie, nie będziemy wysyłać Ci tony niepotrzebnych wiadomości. Zapisz się do newslettera i dowiedz
+                się pierwszy/pierwsza, kiedy w naszej pasiecie pojawi się nowa dostawa miodów lub innych interesujących
+                produktów.</p>
+        </div>
+
     </div>
 
-</form>
-<br>
-<div class="row">
-    <div class="col-sm-4">
-        <p>Spokojnie, nie będziemy wysyłać Ci tony niepotrzebnych wiadomości. Zapisz się do newslettera i dowiedz się pierwszy/pierwsza, kiedy w naszej pasiecie pojawi się nowa dostawa miodów lub innych interesujących produktów.</p>
-    </div>
 
-</div>
- 
-  
-    
+
 </div>
 
 {% endblock content %}
