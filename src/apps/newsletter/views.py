@@ -46,10 +46,10 @@ def newsletters(request):
                                                         sub.email,
                                                         sub.conf_num))
             sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            response = sg.send(message)
+            sg.send(message)
             return render(request, 'newsletter/newsletter.html', {'email': sub.email, 'action': 'wysłano', 'form': NewsletterUserForm()})
         except IntegrityError:
-            messages.error(request, f'Twój email {sub.email} został już zarejestrowany w naszym newsletterze.')
+            messages.error(request, f'Twój email {sub.email} został już zarejestrowany w naszym newsletterze lub czeka na potwierdzenie')
             return render(request, 'newsletter/newsletter.html', {'form': NewsletterUserForm()})
     else:
         return render(request, 'newsletter/newsletter.html', {'form': NewsletterUserForm()})
@@ -94,7 +94,7 @@ def runletter(request):
                     is_multiple=True,
                     subject= form.cleaned_data.get('title'),
                     html_content= form.cleaned_data.get('message')+(
-                        '<br><a href="{}delete/?email={}&conf_num={}">Wpypisz mnie z Newslettera!</a>.').format(request.build_absolute_uri(host),
+                        '<br><br><hr><p><a href="{}delete/?email={}&conf_num={}">Wypisz mnie z Newslettera!</a></p>').format(request.build_absolute_uri(host),
                             sub.email,
                             sub.conf_num))
                 try:
