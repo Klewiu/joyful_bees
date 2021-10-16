@@ -1,7 +1,8 @@
 .jumbo-text{
   color:white;
-  font-size: 4vw;
-  font-family: 'Amatic SC', cursive;
+  font-size: 3vw;
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: bold;
   text-align:center;
   text-shadow: 0 0 7px #ebd61b, 0 0 7px #e7e7e7,
   0 0 20px #dbaa07, 0 0 20px #ffffff,
@@ -18,7 +19,7 @@
 }
 
 .title{
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Advent Pro', sans-serif;
 }
 
 .navbar-brand{
@@ -28,19 +29,25 @@
   font-size: 18px;
   margin-right: 30px;
   border-radius: 1rem;
+  font-family: 'Advent Pro', sans-serif;
+  font-weight:bolder;
 }
 
 .navbar-active{
   background-color: white;
+  border-radius: 0.5rem;
+  
 }
 
 .nav-item:focus, .nav-item:hover, .nav-item:active {
 	background-color: white; 
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+ 
 } 
 
 .navbar-toggler{
   background-color: white;
+  border-radius: 0.5rem;
 }
 
 .text-center {
@@ -48,7 +55,7 @@
 }
 
 .jumbotron {
-    background-image: url("../media/Baner_mid_res2.jpg");
+    background-image: url("../media/baner.jpg");
     background-size: cover;
     padding-top: 8%;
     padding-bottom: 8%;
@@ -69,6 +76,7 @@
   background-color:beige;
   text-align: justify;
   margin-bottom: 10px;
+  font-weight: lighter;
 } 
 
 .card2 {

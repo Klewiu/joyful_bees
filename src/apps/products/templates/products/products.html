@@ -23,11 +23,11 @@
                         <div class="col">
                             <medium><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
                             {% if product.availability > 5 %}
-                            <p style="color:green">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                            <p style="color:green"><b> DOSTĘPNOŚĆ: {{product.availability}} SZT</b></p>
                             {% elif product.availability > 0 and product.availability < 6 %}
-                            <p style="color:darkorange">DOSTĘPNOŚĆ: {{product.availability}} SZT</p>
+                            <p style="color:darkorange"><b>DOSTĘPNOŚĆ: {{product.availability}} SZT</b></p>
                             {% else %}
-                            <p style="color:darkred">PRODUKT OBECNIE NIEDOSTĘPNY </p>
+                            <p style="color:darkred"><b>PRODUKT OBECNIE NIEDOSTĘPNY </b></p>
                             {% endif %}
                         </div>
                     </div>
