@@ -2,22 +2,54 @@
 {% load crispy_forms_tags %}
 
 {% block content%}
+
+
+
 <div class="alert alert-danger">
-Uwaga! Ta funkcja wyśle newsletter do wszystkich zapisanych użytkowników!
+    Uwaga! Ta funkcja wyśle newsletter do wszystkich zapisanyc i potwierdzonych użytkowników newslettera!
 </div>
-<div class = "container">
+<div class="container">
     <div class="row mt-5 pt-5">
-        <div class= "col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-body">
-                    <form method ="POST">
+                    <form method="POST">
                         {% csrf_token %}
                         {{form|crispy}}
                         <br>
-                        <input class= "btn btn-info btn-block" type="submit" value="Wyslij Newsletter">
+                        <!-- Button trigger NEWSLETTER SEND modal -->
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">
+                            Wyślij Newsletter
+                        </button>
+                        <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
+
+
+                        <!-- NEWSLETTER MODAL -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Newsletter</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       Czy na pewno chcesz wysłać ten newsletter?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Wróć</button>
+                                        <input class="btn btn-info btn-block" type="submit" value="Wyslij Newsletter">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </form>
-                    
+
                 </div>
             </div>
         </div>
