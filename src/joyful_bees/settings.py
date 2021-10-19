@@ -18,16 +18,17 @@ from django.contrib.messages import constants as messages
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h4@byoy-=u^hykify$!g(qs!++u@tcfml3*!zyfd*oh%y+o#v5'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pasiekaradosc.pl','www.pasiekaradosc.pl', 'localhost', '127.0.0.1','127.0.0.1:8000']
 
 
 # Application definition
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_simple_cookie_consent',
     'django_filters',
+
 ]
 
 MIDDLEWARE = [
@@ -136,6 +138,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+
+# # Zmienna BASE_DIR powinna być utworzona przez Django w pliku settings.py
+# # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static') 
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media') 
+
+
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
@@ -167,3 +182,14 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_KEY')
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+CORS_REPLACE_HTTPS_REFERER      = False
+HOST_SCHEME                     = "http://"
+SECURE_PROXY_SSL_HEADER         = None
+SECURE_SSL_REDIRECT             = False
+SESSION_COOKIE_SECURE           = True
+CSRF_COOKIE_SECURE              = True
+SECURE_HSTS_SECONDS             = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+SECURE_FRAME_DENY               = False
+
