@@ -4,11 +4,9 @@
 
 <h1 class = "title"> {{title}} </h1>
 {% comment %}  BUTTONS FOR ADMIN  {% endcomment %}
-<a class="btn btn-info" href="{% url 'customers-create' %}">Nowy klient</a>
-<a class="btn btn-info" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
-<a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
-
-
+<a id="adminButton" class="btn btn-info" href="{% url 'customers-create' %}">Nowy klient</a>
+<a id="adminButton" class="btn btn-info" href = "mailto:?bcc={{recievers}}">Mail do wszystkich klientów</a>
+<a id="adminButton" class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>  
 <br>
 <br>
 

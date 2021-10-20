@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+#adminButton{
+  margin: 2px;
+}
+
+
 .title{
   font-family: 'Advent Pro', sans-serif;
 }

@@ -16,10 +16,10 @@
         {% csrf_token %}
         <h5 class="media"> Menu administratora</h5>
         <hr>
-        <a class="btn btn-info" href="{% url 'products-list' %}">Zarządzanie produktami</a>
-        <a class="btn btn-info" href="{% url 'customers-view' %}">Zarządzanie klientami</a>
-        <a class="btn btn-info" href="{% url 'runletter' %}">Wysłanie Newslettera</a>
-        <a class="btn btn-info" href="{% url 'users-register' %}">Rejestracja moderatorów</a>
+        <a id="adminButton" class="btn btn-info" href="{% url 'products-list' %}">Zarządzanie produktami</a>
+        <a id="adminButton" class="btn btn-info" href="{% url 'customers-view' %}">Zarządzanie klientami</a>
+        <a id="adminButton" class="btn btn-info" href="{% url 'runletter' %}">Wysłanie Newslettera</a>
+        <a id="adminButton" class="btn btn-info" href="{% url 'users-register' %}">Rejestracja moderatorów</a>
 
       </div>
       {% endif %}

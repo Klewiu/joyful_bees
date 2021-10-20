@@ -20,6 +20,12 @@ class CustomersView (AdminStaffRequiredMixin, FilterView):
     model=Customer
     template_name = 'customers/manage_customers.html'
     filterset_class = CustomerFilter
+   
+    def get_context_data(self, **kwargs):                  # przekazanie zmiennej recievers do templatea
+      context = super().get_context_data(**kwargs)                     
+      new_context_entry = Customer.email_all()
+      context["recievers"] = new_context_entry  
+      return context
 
     def get_queryset(self):
       qs = self.model.objects.all()
@@ -53,5 +59,3 @@ class CustomersDeleteView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPasse
   template_name = 'customers/customers_delete.html'
   success_url = '/manage_customers/'
 
-
-  

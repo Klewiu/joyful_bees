@@ -6,9 +6,9 @@ from django.urls import reverse
 # Create your models here.
 class Customer(models.Model):
     name =  models.CharField(max_length=50, help_text="Podaj imię i nazwisko lub unikalną nazwę klienta", unique=True, verbose_name='Nazwa klienta')
-    email = models.CharField(max_length=50)
-    tel = PhoneNumberField()
-    address = models.CharField(max_length=80, verbose_name='Adres klienta')
+    email = models.CharField(max_length=50, blank=True)
+    tel = PhoneNumberField(blank=True)
+    address = models.CharField(max_length=80, verbose_name='Adres klienta', blank=True)
     created = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
