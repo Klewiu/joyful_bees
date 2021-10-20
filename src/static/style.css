@@ -79,7 +79,7 @@
   border-radius: .5rem;
   border: 1px solid lightgray;
   background-color:beige;
-  text-align: justify;
+  /* text-align: justify; */
   margin-bottom: 10px;
   font-weight: lighter;
 } 
@@ -140,14 +140,6 @@
   margin-right: 20px;
   margin-bottom: 16px;
 }
-
-
-.carousel-caption{
-  font-family: "Lucida Control", monospace;
-  filter: blur(0.5px);
-  background: rgba(0, 0, 0, 0.35);
-}
-
 
 
 /*FOOTER*/
