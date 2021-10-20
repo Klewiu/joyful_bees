@@ -1,60 +1,106 @@
 {% extends "base.html" %}
 {% block content%}
-<h1 class = "title"> {{title}} </h1>
+<h1 class="title"> {{title}} </h1>
 {% for description in site_description %}
-        <p class="page_description alert-light">{{description.privacy_description_1}}</p>
-        <p class="alert-light"><b>{{description.privacy_description_2}}</b></p>
+<p class="page_description alert-light">{{description.privacy_description_1}}</p>
+<p class="alert-light"><b>{{description.privacy_description_2}}</b></p>
 
 {% endfor %}
+
 <body>
         <div class="card border-secondary col-11">
                 <div class="card-body text-secondary">
-                  <h5 class="card-title"> 1) Postanowienia ogólne</h5>
-                  <p class="card-text">Niniejsza Polityka Prywatności określa zasady przetwarzania danych osobowych obecnych oraz potencjalnych Klientów oraz prawa Użytkowników z tym związane, zawiera informacje dotyczące Administratora Danych Osobowych, a także wykorzystania plików cookie.
-                                        Dane osobowe Użytkowników są chronione przez Stanisława Klewickiego zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz.Urz.UE.L.2016.119.1), Sprostowania do Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz.Urz.UE.L.119 z 4.5.2016) oraz Ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. z 2018 r. poz. 1000 ze zm.).</p>
-                  </div>
-                  <div class="card-body text-secondary">
-                <h5 class="card-title">2) Podstawowe Pojęcia</h5>
-                <p class="card-text">Administrator danych osobowych – Stanisław Klewicki, Ezopa 57, 04-805 Warszawa.
-                        <br>
-                        RODO – Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (Dz.Urz.UE.L.2016.119.1) oraz sprostowanie do Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz.Urz.UE.L.119 z 4.5.2016).<br>
-                        Ustawa – ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. z 2018 r. poz. 1000 ze zm.).</p>
-                 </div>
-                 <div class="card-body text-secondary">
+                        <h5 class="card-title"> 1) Postanowienia ogólne</h5>
+                        <p class="card-text">Niniejsza Polityka Prywatności określa zasady przetwarzania danych
+                                osobowych obecnych oraz potencjalnych Klientów oraz prawa Użytkowników z tym związane,
+                                zawiera informacje dotyczące Administratora Danych Osobowych, a także wykorzystania
+                                plików cookie.
+                                Dane osobowe Użytkowników są chronione przez Stanisława Klewickiego zgodnie z przepisami
+                                Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+                                w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w
+                                sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne
+                                rozporządzenie o ochronie danych) (Dz.Urz.UE.L.2016.119.1), Sprostowania do
+                                Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+                                w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w
+                                sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne
+                                rozporządzenie o ochronie danych) (Dz.Urz.UE.L.119 z 4.5.2016) oraz Ustawy z dnia 10
+                                maja 2018 r. o ochronie danych osobowych (Dz. U. z 2018 r. poz. 1000 ze zm.).</p>
+                </div>
+                <div class="card-body text-secondary">
+                        <h5 class="card-title">2) Podstawowe Pojęcia</h5>
+                        <p class="card-text">Administrator danych osobowych – Stanisław Klewicki, Ezopa 57, 04-805
+                                Warszawa.
+                                <br>
+                                RODO – Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia
+                                2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i
+                                w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE
+                                (Dz.Urz.UE.L.2016.119.1) oraz sprostowanie do Rozporządzenia Parlamentu Europejskiego i
+                                Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w
+                                związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych
+                                oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych)
+                                (Dz.Urz.UE.L.119 z 4.5.2016).<br>
+                                Ustawa – ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. z 2018 r.
+                                poz. 1000 ze zm.).
+                        </p>
+                </div>
+                <div class="card-body text-secondary">
                         <h5 class="card-title">3) Cel Przetwarzania Danych Osobowych</h5>
-                        <p class="card-text"> Badanie satysfakcji Użytkownika oraz marketing promujący Administratora i jego produkty oraz usługi, w tym przesyłanie newslettera, co stanowi spełnienie warunku zgodności z prawem przetwarzania danych, określonego w art. 6 ust. 1 lit. f RODO, jako niezbędnych do celów wynikających z prawnie uzasadnionych interesów realizowanych przez Administratora.</p>
-                 </div>
-                        
-                 <div class="card-body text-secondary">
+                        <p class="card-text"> Badanie satysfakcji Użytkownika oraz marketing promujący Administratora i
+                                jego produkty oraz usługi, w tym przesyłanie newslettera, co stanowi spełnienie warunku
+                                zgodności z prawem przetwarzania danych, określonego w art. 6 ust. 1 lit. f RODO, jako
+                                niezbędnych do celów wynikających z prawnie uzasadnionych interesów realizowanych przez
+                                Administratora.</p>
+                </div>
+
+                <div class="card-body text-secondary">
                         <h5 class="card-title">4) Odbiorca Danych Osobowych</h5>
-                        <p class="card-text"> Administrator może przekazać dane osobowe, wskazane w pkt 16, podmiotom uprawnionym do otrzymania danych osobowych na podstawie przepisów prawa, decyzji organu administracji publicznej lub orzeczenia sądowego.</p>
-                 </div>
+                        <p class="card-text"> Administrator może przekazać dane osobowe, wskazane w pkt 16, podmiotom
+                                uprawnionym do otrzymania danych osobowych na podstawie przepisów prawa, decyzji organu
+                                administracji publicznej lub orzeczenia sądowego.</p>
+                </div>
 
-                 <div class="card-body text-secondary">
+                <div class="card-body text-secondary">
                         <h5 class="card-title">5) Pliki Cookie</h5>
-                        <p class="card-text"> Plik cookie to krótki tekst wysyłany do przeglądarki internetowej przez serwis internetowy, który w danej chwili odwiedza Użytkownik. Dzięki czemu serwis zapamiętuje informacje o ustawieniach przeglądarki, a następna wizyta Użytkownika na tej stronie jest bardziej efektywna, pozwalając na łatwiejsze logowanie do usług Administratora.
-                                Administrator może przetwarzać dane zawarte w plikach cookie, w następującym celu: dostosowanie funkcjonalności dostarczanych przez Administratora, zgodnie z oczekiwaniami Użytkownika, wliczając treści reklamowe i statystyki, co odbywa się anonimowo.<br>
-                                W każdym czasie Użytkownik może dokonać zmiany ustawień przeglądarki internetowej, dotyczących plików cookie, co pozwoli zablokować automatyczną obsługę tych plików albo informować o ich każdorazowym umieszczeniu w urządzeniu odbiorczym.
-                                Administrator może wykorzystywać pliki cookie do prezentowania Użytkownikowi reklamy banerowej, czyli reklamy w formie grafiki, po kliknięciu w którą, Użytkownik zostanie przeniesiony na stronę internetową Administratora lub jedną z jej kart.
-                                Ograniczenie stosowania plików cookie może wpłynąć na niektóre funkcjonalności i utrudnić dostęp Użytkownika do produktów i usług oferowanych przez Administratora.
-                        </div>
+                        <p class="card-text"> Plik cookie to krótki tekst wysyłany do przeglądarki internetowej przez
+                                serwis internetowy, który w danej chwili odwiedza Użytkownik. Dzięki czemu serwis
+                                zapamiętuje informacje o ustawieniach przeglądarki, a następna wizyta Użytkownika na tej
+                                stronie jest bardziej efektywna, pozwalając na łatwiejsze logowanie do usług
+                                Administratora.
+                                Administrator może przetwarzać dane zawarte w plikach cookie, w następującym celu:
+                                dostosowanie funkcjonalności dostarczanych przez Administratora, zgodnie z oczekiwaniami
+                                Użytkownika, wliczając treści reklamowe i statystyki, co odbywa się anonimowo.<br>
+                                W każdym czasie Użytkownik może dokonać zmiany ustawień przeglądarki internetowej,
+                                dotyczących plików cookie, co pozwoli zablokować automatyczną obsługę tych plików albo
+                                informować o ich każdorazowym umieszczeniu w urządzeniu odbiorczym.
+                                Administrator może wykorzystywać pliki cookie do prezentowania Użytkownikowi reklamy
+                                banerowej, czyli reklamy w formie grafiki, po kliknięciu w którą, Użytkownik zostanie
+                                przeniesiony na stronę internetową Administratora lub jedną z jej kart.
+                                Ograniczenie stosowania plików cookie może wpłynąć na niektóre funkcjonalności i
+                                utrudnić dostęp Użytkownika do produktów i usług oferowanych przez Administratora.
+                </div>
 
-                        <div class="card-body text-secondary">
-                                <h5 class="card-title">6) Postanowienia Końcowe </h5>
-                                <p class="card-text">W sprawach nieuregulowanych w Regulaminie i w Polityce prywatności stosuje się przepisy prawa polskiego. Administrator może dokonać zmian w Polityce prywatności w każdym czasie.
-                                Użytkownik odwiedzający stronę Administratora po raz pierwszy, zostanie poproszony o zapoznanie się z Polityką Prywatności. W każdym czasie wizyty na stronie internetowej Administratora, Użytkownik może także zapoznać się z aktualnym Regulaminem i Polityką prywatności, stosując dedykowany odnośnik na dole strony.
+                <div class="card-body text-secondary">
+                        <h5 class="card-title">6) Postanowienia Końcowe </h5>
+                        <p class="card-text">W sprawach nieuregulowanych w Regulaminie i w Polityce prywatności stosuje
+                                się przepisy prawa polskiego. Administrator może dokonać zmian w Polityce prywatności w
+                                każdym czasie.
+                                Użytkownik odwiedzający stronę Administratora po raz pierwszy, zostanie poproszony o
+                                zapoznanie się z Polityką Prywatności. W każdym czasie wizyty na stronie internetowej
+                                Administratora, Użytkownik może także zapoznać się z aktualnym Regulaminem i Polityką
+                                prywatności, stosując dedykowany odnośnik na dole strony</p>.
+                </div>
 
 
         </div>
-                  
 
-        
+
+
 
 </body>
 
 
 
-        
-        
+
+
 
 {% endblock content %}

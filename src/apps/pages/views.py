@@ -71,7 +71,7 @@ def contact(request):
         if message_name and message_email and message:
           send_mail(
             f'Formularz Kontaktowy, wiadomość od {message_name}',
-            f'Wiadomość ze strony Pasieka Radość od {message_email}: {message}',
+            f'Wiadomość z formularza kontaktowego strony Pasieka Radość.\n Użytkownik: {message_name}\n Email: {message_email}\n Wiadomość: {message}',
             message_email,
             ['pasiekaradosc@gmail.com'],)
           messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany')
