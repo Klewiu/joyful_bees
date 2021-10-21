@@ -24,7 +24,7 @@ from apps.products.views import AdminStaffRequiredMixin
 # Create your views here.
 
 #!REGISTER CURRENT HOST!
-host = 'http://127.0.0.1:8000/'
+host = ['http://127.0.0.1:8000/']
 
 # Helper Functions
 def random_digits():
