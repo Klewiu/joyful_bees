@@ -1,6 +1,6 @@
 .jumbo-text{
   color:white;
-  font-size: 3vw;
+  font-size: 4.5vw;
   font-family: 'Advent Pro', sans-serif;
   font-weight: bold;
   text-align:center;
@@ -18,9 +18,10 @@
   align-items: center;
 }
 
-#adminButton{
+#adminButton, #imageAbout{
   margin: 2px;
 }
+
 
 
 .title{
