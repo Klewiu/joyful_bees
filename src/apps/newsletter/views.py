@@ -18,6 +18,8 @@ from django.views.decorators.csrf import csrf_exempt
 import random
 from sendgrid import SendGridAPIClient
 from django.db import IntegrityError
+from django.views.generic import ListView
+from apps.products.views import AdminStaffRequiredMixin
 
 # Create your views here.
 
@@ -117,5 +119,8 @@ def runletter(request):
 
     return render(request,'newsletter/runletter.html', context)
 
-    
+class UserNewsletterView (AdminStaffRequiredMixin, ListView):
+    model=NewsletterUser
+    template_name = 'newsletter/newsletter_user_list.html'
+ 
 

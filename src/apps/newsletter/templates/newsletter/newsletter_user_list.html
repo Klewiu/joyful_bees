@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags%}
+{% block content%}
+
+<h1 class = "title"> {{title}} </h1>
+{% comment %}  BUTTONS FOR ADMIN  {% endcomment %}
+<a id="adminButton" class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>  
+
+<div>
+<table class="table table-sm table-bordered">
+    <thead class="thead">
+        <tr>
+            <th scope="col">Lp</th>
+            <th scope="col">E-mail <br><i><span style="font-size:11px; color:blue">Kliknij aby wysłać email</span></i></br></th> 
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for newsletteruser in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="mailto:{{newsletteruser.email}};">{{newsletteruser.email}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock content %}
