@@ -6,22 +6,19 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group" autocomplete="off">
-        <div class="col-sm-4">
-            <legend class="boarder-bottom mb-4">Zaloguj</legend>
-            {{form|crispy}}
-        </div>
+            <div class="col-sm-4">
+                <legend class="boarder-bottom mb-4">Zaloguj</legend>
+                {{form|crispy}}
+            </div>
         </fieldset>
         <br>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Login</button>
+            <button class="btn btn-outline-info adminButton" type="submit">Login</button>
         </div>
 
     </form>
     <br>
     <div class="border-top pt-3">
-        <!-- <small class="text-muted">
-            Chcesz utworzyć konto? <a href="{% url 'users-register' %}">Zarejestruj się teraz</a>
-        </small> -->
     </div>
 </div>
 

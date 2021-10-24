@@ -189,7 +189,7 @@ SECURE_PROXY_SSL_HEADER         = None
 SECURE_SSL_REDIRECT             = False
 SESSION_COOKIE_SECURE           = True
 CSRF_COOKIE_SECURE              = True
-SECURE_HSTS_SECONDS             = None
+SECURE_HSTS_SECONDS             = False
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
 

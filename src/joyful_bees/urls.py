@@ -18,6 +18,7 @@ from django.urls import path, include
 from joyful_bees import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from .views import security_txt
 
 from apps.products.views import products
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('', include('apps.users.urls')),
     path('', include('apps.customers.urls')),
     path('', include('apps.newsletter.urls')),
+    path(".well-known/security.txt", security_txt),
 ] 
 
 if settings.DEBUG:

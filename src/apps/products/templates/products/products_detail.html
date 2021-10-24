@@ -16,9 +16,9 @@
         <b>Zdjęcie:</b><br> <img class="rounded-circle" src="{{ object.image.url }}"></br>
     <br>
 
-    <a id="adminButton" class="btn btn-info" href="{% url 'products-update' object.id %}">Aktualizuj dane produktu</a>
-    <a id="adminButton" class="btn btn-danger" href="{% url 'products-delete' object.id %}">Usuń produkt</a>
-    <a id="adminButton" class="btn btn-secondary" href="{% url 'products-list' %}">Powrót</a>
+    <a class="btn btn-info adminButton" href="{% url 'products-update' object.id %}">Aktualizuj dane produktu</a>
+    <a class="btn btn-danger adminButton" href="{% url 'products-delete' object.id %}">Usuń produkt</a>
+    <a class="btn btn-secondary adminButton" href="{% url 'products-list' %}">Powrót</a>
     </article>
 
 

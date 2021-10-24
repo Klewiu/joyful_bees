@@ -18,11 +18,11 @@
                         {{form|crispy}}
                         <br>
                         <!-- Button trigger NEWSLETTER SEND modal -->
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-info adminButton" data-bs-toggle="modal"
                             data-bs-target="#exampleModal1">
                             Wyślij Newsletter
                         </button>
-                        <a class="btn btn-secondary" href="{% url 'profile' %}">Powrót do menu admina</a>
+                        <a class="btn btn-secondary adminButton" href="{% url 'profile' %}">Powrót do menu admina</a>
 
 
                         <!-- NEWSLETTER MODAL -->
@@ -36,10 +36,10 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                       Czy na pewno chcesz wysłać ten newsletter?
+                                        Czy na pewno chcesz wysłać ten newsletter?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn btn-secondary adminButton"
                                             data-bs-dismiss="modal">Wróć</button>
                                         <input class="btn btn-info btn-block" type="submit" value="Wyslij Newsletter">
                                     </div>

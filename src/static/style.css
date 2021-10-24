@@ -16,15 +16,15 @@
   align-items: center;
 }
 
-#adminButton, #imageAbout{
-  margin: 2px;
+.adminButton{
+  margin: 1px;
 }
-#pageText{
+
+.pagetext{
   text-align: justify; 
   text-justify: inter-word; 
   margin: 5px;
 }
-
 
 .title{
   font-family: 'Advent Pro', sans-serif;

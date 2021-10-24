@@ -17,9 +17,9 @@
     <br>
     <br>
 
-    <a id="adminButton" class="btn btn-info" href="{% url 'customers-update' object.id %}">Aktualizuj dane klienta</a>
-    <a id="adminButton" class="btn btn-danger" href="{% url 'customers-delete' object.id %}">Usuń Klienta</a>
-    <a id="adminButton" class="btn btn-secondary" href="{% url 'customers-view' %}">Powrót</a>
+    <a class="btn btn-info adminButton" href="{% url 'customers-update' object.id %}">Aktualizuj dane klienta</a>
+    <a class="btn btn-danger adminButton" href="{% url 'customers-delete' object.id %}">Usuń Klienta</a>
+    <a class="btn btn-secondary adminButton" href="{% url 'customers-view' %}">Powrót</a>
     </article>
 
 
