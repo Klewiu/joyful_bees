@@ -1,10 +1,9 @@
 .jumbo-text{
-  color:rgb(255, 255, 255);
-  font-size: 4.5vw;
-  font-family: 'Advent Pro', sans-serif;
+  color:white;
+  font-size: 5vw;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+  text-shadow: 4px 4px 20px white;
   letter-spacing: 1.5px;
 }
 .navbar{
