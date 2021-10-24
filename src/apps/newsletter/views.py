@@ -42,9 +42,9 @@ def newsletters(request):
                 from_email='pasiekaradosc@gmail.com',
                 to_emails=sub.email,
                 subject='Potwierdzenie Adresu Email w Newsletterze Pasieka Radość',
-                html_content= "<h1>Dziękujemy za zapisanie się do newslettera Pasieka Radość!<h1> \
-                    <h2>Od teraz będziemy mogli przesyłać Ci najświeższe informacje z naszej pasieki, potwierdź rejestrację newslettera.</h2> \
-                    <h2><a href='{}confirm/?email={}&conf_num={}'> Kliknij w ten link</a>.<h2>".format(request.build_absolute_uri(host),
+                html_content= "<h4>Dziękujemy za zapisanie się do newslettera Pasieka Radość!</h4> \
+                    <h4>Od teraz będziemy mogli przesyłać Ci najświeższe informacje z naszej pasieki, potwierdź rejestrację newslettera.</h4> \
+                    <h4><a href='{}confirm/?email={}&conf_num={}'> Kliknij w ten link</a>.</h4>".format(request.build_absolute_uri(host),
                                                         sub.email,
                                                         sub.conf_num))
             sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))

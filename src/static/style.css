@@ -1,13 +1,11 @@
 .jumbo-text{
-  color:white;
+  color:rgb(255, 255, 255);
   font-size: 4.5vw;
   font-family: 'Advent Pro', sans-serif;
   font-weight: bold;
-  text-align:center;
-  text-shadow: 0 0 7px #ebd61b, 0 0 7px #e7e7e7,
-  0 0 20px #dbaa07, 0 0 20px #ffffff,
-  0 0 20px #e4e4e4;
-  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+  letter-spacing: 1.5px;
 }
 .navbar{
   background-color: beige;
@@ -21,7 +19,11 @@
 #adminButton, #imageAbout{
   margin: 2px;
 }
-
+#pageText{
+  text-align: justify; 
+  text-justify: inter-word; 
+  margin: 5px;
+}
 
 
 .title{

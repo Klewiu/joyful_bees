@@ -8,9 +8,13 @@
     {% display_cookie_consent %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="description" content="Pasieka Radosc - produkja i sprzedaż miodów w Warszawie">
+    <meta name="keywords" content="Pasieka, miód, pszczelarstwo, Radość, Warszawa">
+    <meta name="author" content="Jakub Klewicki & Tomasz Klewicki">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--     favicon-->
+    <!--favicon-->
     <link rel="shortcut icon" href="{% static 'pszczola.ico' %}" />
 
     <!-- Bootstrap CSS -->
@@ -21,7 +25,16 @@
 
     <!-- Custom js & css -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'main.js' %}" defer></script>
+    
+    <!-- Google Analitics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07HHYD8738"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-07HHYD8738');
+    </script>
     
 
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap" rel="stylesheet">
