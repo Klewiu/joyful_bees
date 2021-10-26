@@ -24,7 +24,7 @@ from apps.products.views import AdminStaffRequiredMixin
 # Create your views here.
 
 #!REGISTER CURRENT HOST!
-host = ['https://pasiekaradosc.pl/']
+host ='https://pasiekaradosc.pl/'
 
 # Helper Functions
 def random_digits():
