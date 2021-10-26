@@ -24,7 +24,7 @@ from apps.products.views import AdminStaffRequiredMixin
 # Create your views here.
 
 #!REGISTER CURRENT HOST!
-host = ['http://127.0.0.1:8000/']
+host = ['https://pasiekaradosc.pl/']
 
 # Helper Functions
 def random_digits():
@@ -43,7 +43,7 @@ def newsletters(request):
                 to_emails=sub.email,
                 subject='Potwierdzenie Adresu Email w Newsletterze Pasieka Radość',
                 html_content= "<h5>Został Ci ostatni krok do rejestracji w newsletterze Pasieka Radość!</h5> \
-                    <h6>Potwierdź rejestrację newslettera klikając w poniższy link. Dzięki temu będziemy pewni, że nasz newsletter trafi właśnie do Ciebie. Dziękujemy!</h6> \
+                    <h5>Potwierdź rejestrację newslettera klikając w poniższy link. Dzięki temu będziemy pewni, że nasz newsletter trafi właśnie do Ciebie. Dziękujemy!</h5> \
                     <h5><a href='{}confirm/?email={}&conf_num={}'> Kliknij w ten link</a>.</h5>".format(request.build_absolute_uri(host),
                                                         sub.email,
                                                         sub.conf_num))
