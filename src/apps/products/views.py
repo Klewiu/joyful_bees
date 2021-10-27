@@ -49,27 +49,13 @@ class ProductsView (AdminStaffRequiredMixin, FilterView):
       product_filtered_list = ProductFilter(self.request.GET, queryset=qs)
       return product_filtered_list.qs
 
-# class ProductsView (AdminStaffRequiredMixin, ListView):
-
-#   def get (self, request, *args, **kwargs):
-  
-#     context = {
-#         'products': Product.objects.all().order_by('name'),
-#         'title':'ADMIN - zarządzanie produktami',
-#       }
-    
-#     if request.user.is_authenticated and request.user.is_superuser:
-#         return render (request,'products/products_list.html', context)
-#     return redirect('page-home')
-    
-
 class ProductsDetailView(AdminStaffRequiredMixin, DetailView): 
   model=Product
   template_name = 'products/products_detail.html'
 
 class ProductsCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateView):
   model = Product
-  fields = ['name', 'description', 'price','availability','image']
+  fields = ['name', 'description', 'price','promotion','availability','image']
   template_name = 'products/products_create.html'
 
   def form_valid(self, form):
@@ -79,7 +65,7 @@ class ProductsCreateView (AdminStaffRequiredMixin, LoginRequiredMixin, CreateVie
 class ProductsUpdateView(AdminStaffRequiredMixin, LoginRequiredMixin, UserPassesTestMixin, UpdateView):
   model=Product
   template_name = 'products/products_create.html'
-  fields = ['name', 'description', 'price','availability','image']
+  fields = ['name', 'description', 'price','promotion','availability','image']
 
   def form_valid(self, form):
     return super().form_valid(form)

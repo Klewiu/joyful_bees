@@ -26,7 +26,8 @@
         <th scope="col">Nazwa produktu <br><i><span style="font-size:11px; color:blue">Kliknij aby wyświetlić
               szczegóły</span></i></br></th>
         <th scope="col">Cena</th>
-        <th scope="col">Dostępność</th>
+        <th scope="col">Ilość</th>
+        <th scope="col">Promo w %</th>
       </tr>
     </thead>
 
@@ -37,6 +38,7 @@
         <td><a href="{% url 'products-detail' product.id %}">{{ product.name }}</a></td>
         <td>{{ product.price }}</td>
         <td>{{ product.availability }}</td>
+        <td>{{ product.promotion }}</td>
       </tr>
       {% endfor %}
     </tbody>

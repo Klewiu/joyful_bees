@@ -21,13 +21,19 @@
                     <p class="card-text mb-4 pagetext">{{product.description}}</p>
                     <div class="row">
                         <div class="col">
-                            <medium><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
+                            {% if product.promotion > 1 %}
+                                <small style="color:grey;"><s> CENA: {{product.price|floatformat:0}} PLN</s></small>
+                                <medium><b>  CENA: {{ product.get_promotion_price}} PLN | <span style="color:#CC0000; font-weight: bold;">PROMOCJA!</span></b></medium>
+                            {% else%} 
+                                <medium><b> CENA: {{product.price|floatformat:0}} PLN</b></medium>
+                            {% endif %}
+
                             {% if product.availability > 5 %}
-                            <p style="color:green"><b> DOSTĘPNOŚĆ: {{product.availability}} SZT</b></p>
+                            <p style="color:green"><b> DOSTĘPNOŚĆ : {{ product.availability }} SZT </b></p>
                             {% elif product.availability > 0 and product.availability < 6 %}
-                            <p style="color:darkorange"><b>DOSTĘPNOŚĆ: {{product.availability}} SZT</b></p>
+                            <p style="color:darkorange"><b>DOSTĘPNOŚĆ : {{ product.availability }} SZT </b></p>
                             {% else %}
-                            <p style="color:darkred"><b>PRODUKT OBECNIE NIEDOSTĘPNY </b></p>
+                            <p style="color:darkred"><b>DOSTĘPNOŚĆ : OBECNIE NIEDOSTĘPNY </b></p>
                             {% endif %}
                         </div>
                     </div>
