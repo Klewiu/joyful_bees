@@ -42,6 +42,7 @@ def about(request):
 def info(request):
     context = {
         'title':'Wiedza',
+        'site_description': Site_description.objects.all(),
       }
     return render (request,'pages/info.html', context )
 
