@@ -39,6 +39,12 @@ def about(request):
       }
     return render (request,'pages/about.html', context )
 
+def info(request):
+    context = {
+        'title':'Wiedza',
+      }
+    return render (request,'pages/info.html', context )
+
 def privacy(request):
     context = {
         'title':'Polityka Prywatności',

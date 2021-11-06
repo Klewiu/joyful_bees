@@ -37,6 +37,8 @@
               href="{% url 'page-news' %}">Aktualności</a></li>
           <li class="nav-item {% active_link 'page-products' 'navbar-active' %}"><a class="nav-link"
               href="{% url 'page-products' %}">Produkty</a></li>
+          <li class="nav-item {% active_link 'page-info' 'navbar-active' %}"><a class="nav-link"
+              href="{% url 'page-info' %}">Wiedza</a></li>
           <li class="nav-item {% active_link 'page-contact' 'navbar-active' %}"><a class="nav-link"
               href="{% url 'page-contact' %}">Kontakt</a></li>
           {% if user.is_authenticated %}
