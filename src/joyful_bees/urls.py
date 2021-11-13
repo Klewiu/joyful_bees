@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from joyful_bees import settings
+from joyful_bees import settings, sitemaps
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from .views import security_txt
+from .sitemaps import StaticViewsSitemap
+from django.contrib.sitemaps.views import sitemap
+from django.conf.urls import url
+from django.http import HttpResponse
 
 from apps.products.views import products
 
+sitemaps={
+    'sitemap': StaticViewsSitemap
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +38,8 @@ urlpatterns = [
     path('', include('apps.customers.urls')),
     path('', include('apps.newsletter.urls')),
     path(".well-known/security.txt", security_txt),
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^robots.txt', lambda x: HttpResponse("Sitemap: https://www.pasiekaradosc.pl/sitemap.xml\nUser-Agent: *\nDisallow:", content_type="text/plain"), name="robots_file"),
 ] 
 
 if settings.DEBUG:
