@@ -16,6 +16,7 @@
   align-items: center;
 }
 
+
 .adminButton{
   margin: 1px;
 }
@@ -33,6 +34,23 @@
 .navbar-brand{
      margin-left:15px !important; 
 }
+
+/* RESIZING NAVBAR FOR LANDSCAPE VIEW ON MOBILE DEVICES */
+
+@media only screen and (max-height: 575px) and (orientation: landscape) {
+  .logo-pic{
+    height: 65px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-height: 575px) and (orientation: landscape) {
+  .navbar-brand{
+    height: 40px;
+    width: auto;
+  }
+}
+
 .nav-item{
   font-size: 18px;
   margin-right: 30px;
