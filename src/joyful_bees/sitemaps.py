@@ -20,7 +20,8 @@ class StaticViewsSitemap(sitemaps.Sitemap):
             'page-news', 
             'page-info', 
             'page-products', 
-            'newsletter'
+            'newsletter',
+            'favicon',
             ]
 
     def location(self, item):
