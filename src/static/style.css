@@ -95,6 +95,11 @@
     text-align: justify;
     text-indent: 5%;
   }
+  
+  .logo-pic{
+    max-width: 50vw;
+  }
+  
 
 .card {
   border-radius: .5rem;
