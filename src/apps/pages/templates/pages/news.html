@@ -16,13 +16,14 @@
 <br>
 {% for post in posts %}
 <article class="media content-section">
-  <img class="rounded-circle post-image" src="{{post.author.profile.image.url }}">
+  
   <div class="media-body">
     <div class="article-metadata">
-        <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> : {{ post.author }}</h5> 
+        <h6><img class="rounded-circle post-image" src="{{post.author.profile.image.url }}"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6> 
      
-      {{ post.content | safe }}</br>
-      <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+      {{ post.content | safe }} 
+      <p><small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small></p>
+      <p></p>
     </div>
   </div>
 </article>
