@@ -39,6 +39,13 @@ def about(request):
       }
     return render (request,'pages/about.html', context )
 
+def foto(request):
+    context = {
+        'title':'Zdjęcia',
+        'site_description': Site_description.objects.all(),
+      }
+    return render (request,'pages/foto.html', context )    
+
 def info(request):
     context = {
         'title':'Wiedza',
@@ -69,22 +76,30 @@ def faq(request):
 
 
 def contact(request):
+    spam_list = ["BTC","help","Capital","crypto","Crypto","Financial","salary","millionaire" ]
+
     if request.method =='POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
 
-        #sending emial through contact form
+         #sending emial through contact form
         if message_name and message_email and message:
-          send_mail(
-            f'Formularz Kontaktowy, wiadomość od {message_name}',
-            f'Wiadomość z formularza kontaktowego strony Pasieka Radość.\n Użytkownik: {message_name}\n Email: {message_email}\n Wiadomość: {message}',
-            message_email,
-            ['pasiekaradosc@gmail.com'],)
-          messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany')
+          if ('CrytoLicle') in message_name:
+            messages.warning(request, 'Nie przyjmujemy spamu! Papa')
+          elif ('@pinkinbox.org') in message_email:
+            messages.warning(request, 'Nie przyjmujemy spamu! Papa')
+          elif any(spam in message for spam in spam_list):
+            messages.warning(request, 'Nie przyjmujemy spamu! Papa')
+          else:
+            send_mail(
+              f'Formularz Kontaktowy, wiadomość od {message_name}',
+              f'Wiadomość z formularza kontaktowego strony Pasieka Radość.\n Użytkownik: {message_name}\n Email: {message_email}\n Wiadomość: {message}',
+              message_email,
+              ['pasiekaradosc@gmail.com'],)
+            messages.success(request, f'Dziękujemy za kontakt {message_name}, Twój email został wysłany')
         else:
           messages.warning(request, 'Wypełnij wszystkie pola formularza przed wysłaniem')
-
 
         context = {
             'message_name': message_name,

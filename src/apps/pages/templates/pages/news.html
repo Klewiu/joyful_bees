@@ -21,7 +21,7 @@
     <div class="article-metadata">
         <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> : {{ post.author }}</h5> 
      
-      {{ post.content }}</br>
+      {{ post.content | safe }}</br>
       <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
     </div>
   </div>

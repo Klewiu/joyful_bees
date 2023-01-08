@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content%}
+<h1 class="title">{{title}}</h1>
+{% for description in site_description %}
+<p class="page_description alert-light">{{description.about_description_1}}</p>
+<p class="alert-light"><b>{{description.about_description_2}}</b></p>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_1.jpg" alt="" />
+    </div>
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_2.jpg" alt=""/>
+    </div>
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_3.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_4.jpg" alt=""/>
+    </div>
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_5.jpg" alt=""/>
+    </div>
+    <div class="col-sm">
+      <img class="img-fluid m-1" src="/media/foto_6.jpg" alt="" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+        <img class="img-fluid m-1" src="/media/foto_7.jpg" alt="" />
+    </div>
+    <div class="col-sm">
+        <img class="img-fluid m-1" src="/media/foto_8.jpg" alt="" />
+    </div>
+    <div class="col-sm">
+        <img class="img-fluid m-1" src="/media/foto_9.jpg" alt="" />
+    </div>
+  </div>
+</div>
+
+{% endfor %} {% endblock content %}
