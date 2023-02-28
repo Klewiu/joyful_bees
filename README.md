@@ -14,4 +14,4 @@
 <img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_1.JPG" alt="example1" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_2.JPG" alt="example2" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_4.JPG" alt="example4" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;
 
 If you are interesten in this project please contact kuba.klewicki@gmail.com or tomekklewicki@gmail.com
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Globe_icon_2.svg" /> https://pasiekaradosc.pl/
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Globe_icon_2.svg" alt="www" width="auto" height="15" margin="5px" align="center" /> https://pasiekaradosc.pl/
