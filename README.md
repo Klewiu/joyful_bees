@@ -10,5 +10,5 @@
 6. The application includes a newsletter function with the possibility of subscribing and unsubscribing by the user and creating messages by the administrator.
 7. Includes a contact form with a simple spam filter.
 
-## Application view:
+## Application views:
 <img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_1.JPG" alt="example1" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_2.JPG" alt="example2" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;<img src="https://github.com/Klewiu/joyful_bees/blob/main/src/static/example_4.JPG" alt="example4" width="auto" height="400" margin="5px" />&nbsp;&nbsp;&nbsp;
