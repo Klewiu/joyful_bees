@@ -181,6 +181,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'pasiekaradosc@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_KEY_1')
+# !ważne: ustaw domyślnego nadawcę
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 MESSAGE_TAGS = {
