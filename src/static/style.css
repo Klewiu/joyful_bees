@@ -95,6 +95,11 @@
     text-align: justify;
     text-indent: 5%;
   }
+  
+  .logo-pic{
+    max-width: 50vw;
+  }
+  
 
 .card {
   border-radius: .5rem;
@@ -156,10 +161,12 @@
 }
 
 .post-image {
-  height: 60px;
-  width: 60px;
-  margin-right: 20px;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  /* margin-right: 20px;
   margin-bottom: 16px;
+  margin-top: 5px; */
 }
 
 

@@ -24,7 +24,6 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
   <a class="navbar-brand" href="{% url 'page-home' %}">
     <img src="/media/logo.png" class="img-fluid logo-pic">
-    <div class="container-fluid px-2">
       <a class="navbar-brand" href="{% url 'page-home' %}"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
@@ -39,6 +38,8 @@
               href="{% url 'page-products' %}">Produkty</a></li>
           <li class="nav-item {% active_link 'page-info' 'navbar-active' %}"><a class="nav-link"
               href="{% url 'page-info' %}">Wiedza</a></li>
+          <li class="nav-item {% active_link 'page-foto' 'navbar-active' %}"><a class="nav-link"
+            href="{% url 'page-foto' %}">Zdjęcia</a></li>
           <li class="nav-item {% active_link 'page-contact' 'navbar-active' %}"><a class="nav-link"
               href="{% url 'page-contact' %}">Kontakt</a></li>
           {% if user.is_authenticated %}
@@ -53,7 +54,6 @@
         </ul>
 
       </div>
-    </div>
 </nav>
 
 
