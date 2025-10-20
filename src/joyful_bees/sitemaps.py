@@ -20,8 +20,7 @@ class StaticViewsSitemap(sitemaps.Sitemap):
             'page-news', 
             'page-info', 
             'page-products', 
-            'newsletter',
-            'favicon',
+            # 'newsletter' removed while newsletter is disabled
             ]
 
     def location(self, item):

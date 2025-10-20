@@ -7,7 +7,7 @@
     <p class="alert-light"><b>{{description.news_description_2}}</b></p>
 {% endfor %}
   <div>
-    <p>Chcesz wiedzieć kiedy mamy świeżą dostawę miodów? Zapisz się do <a href="{% url 'newsletter' %}">Newslettera</a></p>
+    <p>Chcesz wiedzieć kiedy mamy świeżą dostawę miodów? Napisz do nas! <a href="{% url 'page-contact' %}">Kontakt</a></p>
   </div>
 {% if user.is_authenticated %}
 <a class="btn btn-info" href="{% url 'news-create' %}">Dodaj nowy Post</a>
