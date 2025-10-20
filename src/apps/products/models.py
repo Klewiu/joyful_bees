@@ -28,15 +28,19 @@ class Product(models.Model):
         return reverse('products-list')
 
     def clean(self):
-
         if not self.image:
             raise ValidationError("No image!")
-        else:
+        
+        try:
             w, h = get_image_dimensions(self.image)
-            if w != 450:
-                raise ValidationError("Obraz jest o szerokości %i pixeli. Obraz musi mieć 450 x 450 px" % w)
-            if h != 450:
-                raise ValidationError("Obraz jest o wysokości %i pixeli. Obraz musi mieć 450 x 450 px" % h)
+        except Exception:
+            # Obraz jeszcze nie jest gotowy lub niepoprawny
+            return
+
+        if w != 450 or h != 450:
+            raise ValidationError(
+                f"Obraz ma wymiary {w}x{h} px. Musi mieć dokładnie 450x450 px."
+            )
 
     def __str__(self):
         return f"{self.name}"
